@@ -23,6 +23,7 @@ export const RotatingTypography = (props: TypographyProps) => {
     <Typography
       {...props}
       sx={{
+        ...props.sx,
         fontFamily: "Avenir Next Heavy",
         color: "#fff",
         letterSpacing: "-0.07em",

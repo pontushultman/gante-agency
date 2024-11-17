@@ -16,6 +16,7 @@ export const PagesSection = () => {
       flexDirection="column"
       display="flex"
       paddingTop={8}
+      paddingBottom={8}
     >
       <Box
         display="flex"

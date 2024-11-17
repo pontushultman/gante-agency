@@ -11,7 +11,7 @@ const client = createClient({
   //     "skoor70QVuvf0hqCQNXsJE3x2uTs9Zim80MeHNQqEK0mShL1lQBBAiWntDSVajpZ1FgRGgBkynWMnOhhnD77HBmE0JbgJIbOsAiHUzeGnxzE8KzN5Luy34YdNCWsJZ0GGEIIVeFtKTW7Lhh2B7javJ6t4ZlSD4oDKqdNncfF0Tgxy0RWP0Xi"
 })
 
-type ArtistModel = Omit<Artists, "musicFormat" | "artistType"> & {
+export type ArtistModel = Omit<Artists, "musicFormat" | "artistType"> & {
   musicFormat: MusicFormat[]
   artistType: ArtistType
 }
