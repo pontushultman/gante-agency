@@ -1,6 +1,10 @@
 // IncludeHelper.ts
 type IncludeFn<T> = (obj: IncludeProxy<T>) => any;
 
+export type Condition = "==" | "!=" | "<" | "<=" | ">" | ">=";
+
+export type WhereFn<T> = (obj: IncludeProxy<T>, comp: Condition, asd: string) => any;
+
 type GetIsArray<T, Path> = Path extends keyof T
   ? T[Path] extends Array<any>
     ? true

@@ -1,4 +1,4 @@
-import { FullScreenBackground } from "../../components/FullScreenImage"
+import { FullScreenBackground } from "../../components/FullScreenBackground"
 import { HomeTitle } from "./components/HomeTitle"
 import { PagesSection } from "./sections/PagesSection"
 

@@ -1,4 +1,5 @@
 import { Box, keyframes, styled, Typography } from "@mui/material"
+import { SubTitle } from "../../../components/typography/SubTitle"
 
 const glitchAnim = keyframes`
   0% {
@@ -48,14 +49,7 @@ export const HomeTitle = () => {
       alignItems="center"
       height="100%"
     >
-      <Typography
-        fontSize="1.125rem"
-        fontFamily="Avenir Next Medium"
-        color="white"
-        letterSpacing="0.25em"
-      >
-        MUSIC / PEOPLE / EVENTS
-      </Typography>
+      <SubTitle fontSize="1.125rem">Welcome to</SubTitle>
       <StyledTypography fontSize="5.75rem">Gante Agency</StyledTypography>
     </Box>
   )

@@ -1,8 +1,8 @@
 import { Box, Chip, Typography } from "@mui/material"
 import React from "react"
-import { useNavigate } from "react-router-dom"
-import { Artists, MusicFormat } from "../../sanity/generated-schema-types"
-import { urlFor } from "../../sanity/image"
+import { Artists, MusicFormat } from "../../../sanity/generated-schema-types"
+import { urlFor } from "../../../sanity/image"
+import { useNavigationContext } from "../../../setup/NavigationProvider"
 
 export type SlimArtist = Pick<Artists, "name" | "_id" | "image"> & {
   musicFormat: MusicFormat[]
@@ -13,10 +13,10 @@ interface ArtistCardProps {
 }
 
 const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigationContext()
 
   const handleClick = () => {
-    navigate(`/artists/${artist._id}`)
+    navigate.navigateTo("/artists/:id", { id: artist._id })
   }
 
   const imageUrl = artist.image

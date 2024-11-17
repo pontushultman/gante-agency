@@ -1,15 +1,46 @@
 import { useQuery } from "@tanstack/react-query"
-import { dbContext } from "./sanityClient"
+import { sanityDb } from "./sanityClient"
 
-const assetsQueryKey = ["assets"]
+const artistsQueryKey = ["artists"]
 
-export const useAssetsQuery = () => {
+export const useArtistsQuery = () => {
   return useQuery({
-    queryKey: assetsQueryKey,
+    queryKey: artistsQueryKey,
     queryFn: async () => {
-      return await dbContext.artists
+      return await sanityDb.artists.Include((q) => q.musicFormat, true).ToList()
+    }
+  })
+}
+
+export const useArtistTypesQuery = () => {
+  return useQuery({
+    queryKey: ["artistTypes"],
+    queryFn: async () => {
+      return await sanityDb.artistTypes.ToList()
+    }
+  })
+}
+
+export const useMusicFormatsQuery = () => {
+  return useQuery({
+    queryKey: ["musicFormats"],
+    queryFn: async () => {
+      return await sanityDb.musicFormats.ToList()
+    }
+  })
+}
+
+export const useArtistByIdQuery = (id: string | undefined) => {
+  return useQuery({
+    queryKey: ["artist", id],
+    retry: false,
+    queryFn: async () => {
+      if (!id) return null
+      return await sanityDb.artists
         .Include((q) => q.musicFormat, true)
-        .ToList()
+        .Include((q) => q.artistType)
+        .Where((q) => q._id, "==", id)
+        .First()
     }
   })
 }

@@ -16,13 +16,13 @@ type ArtistModel = Omit<Artists, "musicFormat" | "artistType"> & {
   artistType: ArtistType
 }
 
-class DbContext {
+class SanityDb {
   // Define your entity sets
   artists = new EntitySet<ArtistModel>("artists")
   musicFormats = new EntitySet<MusicFormat>("musicFormat")
   artistTypes = new EntitySet<ArtistType>("artistType")
 }
 
-export const dbContext = new DbContext()
+export const sanityDb = new SanityDb()
 
 export default client

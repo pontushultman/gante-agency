@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { UnionPath } from "../modules/Routes"
 
 type NavigationContextProps = {
-  navigateTo: (path: UnionPath) => void
+  navigateTo: (path: UnionPath, params?: Record<string, string>) => void
   currentPath: string
 }
 
@@ -19,8 +19,15 @@ export const NavigationProvider = ({ children }: NavigationProviderProps) => {
   const navigate = useNavigate()
   const currentPath = window.location.pathname
 
-  const navigateTo = (path: UnionPath) => {
-    navigate(path)
+  const navigateTo = (path: UnionPath, params: Record<string, string> = {}) => {
+    // Replace any path variables like ":id" with actual values from params
+    const fullPath = Object.keys(params).reduce((acc, key) => {
+      return acc.replace(`:${key}`, params[key])
+    }, path)
+
+    navigate({
+      pathname: fullPath
+    })
   }
 
   return (

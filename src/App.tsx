@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { AppNavigation } from "./AppNavigation"
+import { GuiThemeProvider } from "./setup/ThemeProvider"
 
 const queryClient = new QueryClient()
 
@@ -7,7 +8,9 @@ function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <AppNavigation />
+        <GuiThemeProvider>
+          <AppNavigation />
+        </GuiThemeProvider>
       </QueryClientProvider>
     </>
   )

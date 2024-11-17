@@ -52,13 +52,6 @@ export interface Artists extends SanityDocument {
   name?: string;
 
   /**
-   * Bio — `text`
-   *
-   *
-   */
-  bio?: string;
-
-  /**
    * Artist Type — `reference`
    *
    *
@@ -83,6 +76,70 @@ export interface Artists extends SanityDocument {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
+
+  /**
+   * Bio — `text`
+   *
+   *
+   */
+  bio?: string;
+
+  /**
+   * Social links — `object`
+   *
+   *
+   */
+  socialLinks?: {
+    _type: "socialLinks";
+    /**
+     * Facebook — `url`
+     *
+     *
+     */
+    facebook?: string;
+
+    /**
+     * Instagram — `url`
+     *
+     *
+     */
+    instagram?: string;
+
+    /**
+     * Spotify — `url`
+     *
+     *
+     */
+    spotify?: string;
+
+    /**
+     * YouTube — `url`
+     *
+     *
+     */
+    youtube?: string;
+  };
+
+  /**
+   * Video gallery — `array`
+   *
+   *
+   */
+  videoGallery?: Array<SanityKeyed<string>>;
+
+  /**
+   * Image gallery — `array`
+   *
+   *
+   */
+  imageGallery?: Array<
+    SanityKeyed<{
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    }>
+  >;
 }
 
 /**

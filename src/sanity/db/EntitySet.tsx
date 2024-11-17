@@ -1,6 +1,11 @@
 // EntitySet.ts
 import { SanityDocument } from "sanity-codegen"
-import { getIncludePathAndType, IncludeProxy } from "./utils"
+import {
+  Condition,
+  getIncludePathAndType,
+  IncludeProxy,
+  WhereFn
+} from "./utils"
 import client from "../sanityClient"
 
 type IncludeFn<T> = (obj: IncludeProxy<T>) => any
@@ -13,6 +18,7 @@ interface IncludeOption {
 class EntitySet<T extends SanityDocument> {
   private type: string
   private includes: IncludeOption[]
+  private whereClause: string = ""
 
   constructor(type: string, includes: IncludeOption[] = []) {
     this.type = type
@@ -25,8 +31,23 @@ class EntitySet<T extends SanityDocument> {
     return new EntitySet<T>(this.type, [...this.includes, { path, isArray }])
   }
 
+  // Add a Where method to filter by a specific condition
+  Where(
+    conditionFn: IncludeFn<T>,
+    condition: Condition,
+    value: any
+  ): EntitySet<T> {
+    const { path } = getIncludePathAndType(conditionFn)
+
+    this.whereClause = `&& ${path} ${condition} "${value}"`
+
+    return this
+  }
   buildQuery(): string {
-    let baseQuery = `*[_type == "${this.type}"]`
+    const whereClause = this.whereClause ? `${this.whereClause}` : null
+    let baseQuery = whereClause
+      ? `*[_type == "${this.type}" ${whereClause}]`
+      : `*[_type == "${this.type}"]`
 
     if (this.includes.length > 0) {
       const projections = this.includes
