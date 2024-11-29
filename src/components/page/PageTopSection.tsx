@@ -2,23 +2,21 @@ import { Box, Typography } from "@mui/material"
 import { HomeNavigationButton } from "../button/HomeNavigationButton"
 
 type PageTopSectionProps = {
-  logoSrc?: string
-  onMenuClick: () => void
   title: string
   subtitle: string
   description: string
+  disableBacknavigation?: boolean
 }
 
 export const PageTopSection = ({
-  logoSrc,
-  onMenuClick,
   title,
   subtitle,
-  description
+  description,
+  disableBacknavigation
 }: PageTopSectionProps) => {
   return (
     <>
-      <HomeNavigationButton />
+      {!disableBacknavigation && <HomeNavigationButton />}
 
       <Box
         sx={{

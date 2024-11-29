@@ -38,7 +38,7 @@ export const ArtistDetailPage = () => {
         <HomeNavigationButton
           onBackNavigation={() => navigate.navigateTo("artists")}
         />
-        <Box marginLeft={12}>
+        <Box marginLeft={12} mt={4}>
           <ConnectSection
             title={`Connect with me`}
             connectProps={{

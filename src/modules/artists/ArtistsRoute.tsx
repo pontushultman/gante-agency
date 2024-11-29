@@ -6,14 +6,18 @@ import ArtistsSection from "./components/ArtistsSection"
 
 export const artistsPath = "artists"
 
-const ArtistsRoute: React.FC = () => {
+type ArtistsProps = {
+  disableBacknavigation?: boolean
+}
+
+export const Artists = ({ disableBacknavigation }: ArtistsProps) => {
   return (
     <>
       <PageTopSection
         description="Book our artists for your event"
         subtitle="The family"
         title="DJS & ARTISTS"
-        onMenuClick={() => console.log("Asd")}
+        disableBacknavigation={disableBacknavigation}
       />
       <Box
         paddingBottom={40}
@@ -26,6 +30,10 @@ const ArtistsRoute: React.FC = () => {
       </Box>
     </>
   )
+}
+
+const ArtistsRoute: React.FC = () => {
+  return <Artists />
 }
 
 export default ArtistsRoute

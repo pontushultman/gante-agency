@@ -9,8 +9,8 @@ const StyledBackgroundImage = styled("div")({
   fontFamily: '"Comic Sans MS", cursive, sans-serif',
   fontSize: "1.5em",
   textTransform: "uppercase",
-  width: "540px",
-  height: "900px",
+  width: "400px",
+  height: "500px",
   filter:
     "brightness(0.7) grayscale(0.5)" /* Adjust values for desired effect */,
   "&:hover": {

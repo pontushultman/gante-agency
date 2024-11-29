@@ -1,5 +1,6 @@
 import { Box, keyframes, styled, Typography } from "@mui/material"
 import { SubTitle } from "../../../components/typography/SubTitle"
+import { Connect } from "../../../components/connect/Connect"
 
 const glitchAnim = keyframes`
   0% {
@@ -48,9 +49,18 @@ export const HomeTitle = () => {
       justifyContent="center"
       alignItems="center"
       height="100%"
+      width="100%"
     >
       <SubTitle fontSize="1.125rem">Welcome to</SubTitle>
       <StyledTypography fontSize="5.75rem">Gante Agency</StyledTypography>
+      <Box>
+        <Connect
+          facebookUrl="asd"
+          instagramUrl="asd"
+          spotifyUrl="asd"
+          youtubeUrl="asd"
+        />
+      </Box>
     </Box>
   )
 }

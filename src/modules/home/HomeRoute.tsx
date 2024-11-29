@@ -1,16 +1,43 @@
+import { Box, Button } from "@mui/material"
 import { FullScreenBackground } from "../../components/FullScreenBackground"
+import { Artists } from "../artists/ArtistsRoute"
 import { HomeTitle } from "./components/HomeTitle"
-import { PagesSection } from "./sections/PagesSection"
+import { useState } from "react"
+import { ContactFormDrawer } from "../../components/form/ContactForm"
+import { GuiButton } from "../../components/button/GuiButton"
 
 export const homePath = "*"
+
+export const GetInTouchButtoFixedButton = () => {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <>
+      <ContactFormDrawer onClose={() => setOpen(false)} open={open} />
+
+      <GuiButton
+        sx={{ position: "fixed", top: "5%", left: "2rem" }}
+        onClick={() => setOpen(true)}
+      >
+        Contact us
+      </GuiButton>
+    </>
+  )
+}
 
 export const HomeRoute = () => {
   return (
     <>
+      <GetInTouchButtoFixedButton />
+
       <FullScreenBackground>
         <HomeTitle />
       </FullScreenBackground>
-      <PagesSection />
+      <Box width="100%" justifyContent="center" display="flex">
+        <Box marginTop={4} maxWidth={1200}>
+          <Artists disableBacknavigation />
+        </Box>
+      </Box>
     </>
   )
 }
