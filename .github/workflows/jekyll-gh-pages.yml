@@ -42,7 +42,7 @@ jobs:
       - name: Build Project
         run: pnpm build
 
-      - name: Debug: List Build Directory
+      - name: List Build Directory
         run: ls -la ./build
 
       - name: Upload Prebuilt Files
