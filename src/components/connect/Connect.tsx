@@ -1,4 +1,4 @@
-import { Facebook, Instagram, YouTube } from "@mui/icons-material"
+import { Facebook, Instagram, Map, YouTube } from "@mui/icons-material"
 import { Grid } from "@mui/material"
 import { GuiIconButton } from "../button/GuiIconButton"
 import Spotify from "../assets/Spotify"
@@ -8,6 +8,7 @@ export type ConnectProps = {
   youtubeUrl?: string
   instagramUrl?: string
   spotifyUrl?: string
+  mapUrl?: string
 }
 
 // Define the possible keys as a union type
@@ -16,6 +17,7 @@ type SocialLinkKey =
   | "youtubeUrl"
   | "instagramUrl"
   | "spotifyUrl"
+  | "mapUrl"
 
 const size = "small"
 
@@ -23,20 +25,23 @@ const socialLinks: { icon: React.ElementType; urlKey: SocialLinkKey }[] = [
   { icon: Facebook, urlKey: "facebookUrl" },
   { icon: YouTube, urlKey: "youtubeUrl" },
   { icon: Instagram, urlKey: "instagramUrl" },
-  { icon: Spotify, urlKey: "spotifyUrl" }
+  { icon: Spotify, urlKey: "spotifyUrl" },
+  { icon: Map, urlKey: "mapUrl" }
 ]
 
 export const Connect = ({
   facebookUrl,
   instagramUrl,
   spotifyUrl,
-  youtubeUrl
+  youtubeUrl,
+  mapUrl
 }: ConnectProps) => {
   const urls: Record<SocialLinkKey, string | undefined> = {
     facebookUrl,
     youtubeUrl,
     instagramUrl,
-    spotifyUrl
+    spotifyUrl,
+    mapUrl
   }
 
   return (

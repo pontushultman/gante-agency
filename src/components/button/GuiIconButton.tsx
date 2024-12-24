@@ -4,11 +4,13 @@ type GuiIconButtonProps = {
   onClick?: () => void
   url?: string
   children: React.ReactNode
-  size?: "small" | "medium" | "large"
+  size?: "small" | "medium" | "large" | "xs"
 }
 
-export const getSize = (size: "small" | "medium" | "large") => {
+export const getSize = (size: "small" | "medium" | "large" | "xs") => {
   switch (size) {
+    case "xs":
+      return 10
     case "small":
       return 30
     case "medium":

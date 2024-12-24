@@ -10,8 +10,18 @@ import { FullScreenBackground } from "../../../components/FullScreenBackground"
 import { urlFor } from "../../../sanity/image"
 import { useArtistByIdQuery } from "../../../sanity/useClient"
 import { useNavigationContext } from "../../../setup/NavigationProvider"
+import { ArtistModel } from "../../../sanity/sanityClient"
 
 export const artistDetailPath = "/artists/:id"
+
+const hasSocialLink = (artist: ArtistModel) => {
+  return (
+    artist.socialLinks?.facebook ||
+    artist.socialLinks?.spotify ||
+    artist.socialLinks?.instagram ||
+    artist.socialLinks?.youtube
+  )
+}
 
 export const ArtistDetailPage = () => {
   const navigate = useNavigationContext()
@@ -36,19 +46,21 @@ export const ArtistDetailPage = () => {
     >
       <FullScreenBackground backgroundImage={imageUrl}>
         <HomeNavigationButton
-          onBackNavigation={() => navigate.navigateTo("artists")}
+          onBackNavigation={() => navigate.navigateTo("*")}
         />
-        <Box marginLeft={12} mt={4}>
-          <ConnectSection
-            title={`Connect with me`}
-            connectProps={{
-              facebookUrl: data.socialLinks?.facebook,
-              instagramUrl: data.socialLinks?.instagram,
-              spotifyUrl: data.socialLinks?.spotify,
-              youtubeUrl: data.socialLinks?.youtube
-            }}
-          />
-        </Box>
+        {hasSocialLink(data) && (
+          <Box marginLeft={12} mt={4}>
+            <ConnectSection
+              title={`Connect with me`}
+              connectProps={{
+                facebookUrl: data.socialLinks?.facebook,
+                instagramUrl: data.socialLinks?.instagram,
+                spotifyUrl: data.socialLinks?.spotify,
+                youtubeUrl: data.socialLinks?.youtube
+              }}
+            />
+          </Box>
+        )}
         <DetailPageWrapper>
           <Box display="flex" flexDirection="column" gap={2}>
             <DetailPageTitle subTitle="Family" title={data.name || ""} />

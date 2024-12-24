@@ -20,7 +20,6 @@ export const Artists = ({ disableBacknavigation }: ArtistsProps) => {
         disableBacknavigation={disableBacknavigation}
       />
       <Box
-        paddingBottom={40}
         display="flex"
         sx={{
           backgroundColor: "black"

@@ -55,10 +55,9 @@ export const HomeTitle = () => {
       <StyledTypography fontSize="5.75rem">Gante Agency</StyledTypography>
       <Box>
         <Connect
-          facebookUrl="asd"
-          instagramUrl="asd"
-          spotifyUrl="asd"
-          youtubeUrl="asd"
+          facebookUrl="https://www.facebook.com/gabriel.hammarsten"
+          instagramUrl="https://www.instagram.com/gante_agency/"
+          mapUrl="https://maps.app.goo.gl/1rb8NXKRSrCcgdJ5A"
         />
       </Box>
     </Box>

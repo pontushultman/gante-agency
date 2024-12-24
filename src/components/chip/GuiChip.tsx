@@ -11,7 +11,7 @@ export const GuiChip = ({ label }: GuiChipProps) => {
       label={label}
       sx={{
         backgroundColor: "#e53935",
-        maxWidth: 50,
+        maxWidth: "fit-content",
         maxHeight: 20,
         color: "#fff",
         fontSize: 12,

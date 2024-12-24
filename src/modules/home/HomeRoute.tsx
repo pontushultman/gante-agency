@@ -5,6 +5,7 @@ import { HomeTitle } from "./components/HomeTitle"
 import { useState } from "react"
 import { ContactFormDrawer } from "../../components/form/ContactForm"
 import { GuiButton } from "../../components/button/GuiButton"
+import { Footer } from "../footer/Footer"
 
 export const homePath = "*"
 
@@ -28,8 +29,6 @@ export const GetInTouchButtoFixedButton = () => {
 export const HomeRoute = () => {
   return (
     <>
-      <GetInTouchButtoFixedButton />
-
       <FullScreenBackground>
         <HomeTitle />
       </FullScreenBackground>
@@ -37,6 +36,9 @@ export const HomeRoute = () => {
         <Box marginTop={4} maxWidth={1200}>
           <Artists disableBacknavigation />
         </Box>
+      </Box>
+      <Box width="100%" display="flex" justifyContent="center">
+        <Footer />
       </Box>
     </>
   )

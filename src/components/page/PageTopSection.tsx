@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material"
 import { HomeNavigationButton } from "../button/HomeNavigationButton"
+import { CaptionTypography } from "../typography/CaptionTypography"
 
 type PageTopSectionProps = {
   title: string
@@ -29,17 +30,7 @@ export const PageTopSection = ({
         }}
       >
         <Box sx={{ maxWidth: 600, margin: "0 auto" }}>
-          <Typography
-            variant="caption"
-            sx={{
-              fontSize: 12,
-              letterSpacing: 2,
-              color: "#bbb",
-              marginBottom: "10px"
-            }}
-          >
-            {subtitle}
-          </Typography>
+          <CaptionTypography>{subtitle}</CaptionTypography>
           <Typography
             variant="h1"
             sx={{
