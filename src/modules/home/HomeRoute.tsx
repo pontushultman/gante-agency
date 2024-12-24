@@ -1,11 +1,11 @@
-import { Box, Button } from "@mui/material"
+import { Box } from "@mui/material"
+import { useState } from "react"
+import { GuiButton } from "../../components/button/GuiButton"
+import { ContactFormDrawer } from "../../components/form/ContactForm"
 import { FullScreenBackground } from "../../components/FullScreenBackground"
 import { Artists } from "../artists/ArtistsRoute"
-import { HomeTitle } from "./components/HomeTitle"
-import { useState } from "react"
-import { ContactFormDrawer } from "../../components/form/ContactForm"
-import { GuiButton } from "../../components/button/GuiButton"
 import { Footer } from "../footer/Footer"
+import { HomeTitle } from "./components/HomeTitle"
 
 export const homePath = "*"
 

@@ -1,12 +1,7 @@
 // EntitySet.ts
 import { SanityDocument } from "sanity-codegen"
-import {
-  Condition,
-  getIncludePathAndType,
-  IncludeProxy,
-  WhereFn
-} from "./utils"
 import client from "../sanityClient"
+import { Condition, getIncludePathAndType, IncludeProxy } from "./utils"
 
 type IncludeFn<T> = (obj: IncludeProxy<T>) => any
 

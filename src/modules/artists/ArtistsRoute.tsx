@@ -1,4 +1,3 @@
-// src/components/Artists.js
 import { Box } from "@mui/material"
 import React from "react"
 import PageTopSection from "../../components/page/PageTopSection"

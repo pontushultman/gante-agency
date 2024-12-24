@@ -1,11 +1,11 @@
-import { Box, Button, Drawer, Grid, Grid2, Typography } from "@mui/material"
+import { Box, Drawer, Grid, Typography } from "@mui/material"
 import { FieldValues, FormProvider, useForm } from "react-hook-form"
 
 import { z } from "zod"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { RhfTextField, RhfTextFieldProps } from "../rhf/RhfTextField"
 import { GuiButton } from "../button/GuiButton"
+import { RhfTextField, RhfTextFieldProps } from "../rhf/RhfTextField"
 
 const schema = z.object({
   name: z.string().min(1),

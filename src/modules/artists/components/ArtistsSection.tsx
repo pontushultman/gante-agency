@@ -1,13 +1,12 @@
 import { Box, Grid } from "@mui/material"
-import { useMemo, useState } from "react"
 import { motion } from "framer-motion"
+import { useMemo } from "react"
+import { AnimationGrid } from "../../../components/grid/AnimationGrid"
 import { useArtistsQuery } from "../../../sanity/useClient"
 import ArtistCard, { SlimArtist } from "./ArtistCard"
-import { AnimationGrid } from "../../../components/grid/AnimationGrid"
 
 const ArtistsSection = () => {
   const { data, isLoading } = useArtistsQuery()
-  const [search, setSearch] = useState("")
 
   const mappedData = useMemo(() => {
     if (!data) return []
@@ -20,22 +19,9 @@ const ArtistsSection = () => {
         musicFormat: artist.musicFormat
       }
 
-      if (search.length === 0) {
-        return [...acc, mappedArtist]
-      }
-
-      if (
-        artist.name?.toLowerCase().includes(search.toLowerCase()) ||
-        artist.musicFormat.some((format) =>
-          format.musicFormat?.toLowerCase().includes(search.toLowerCase())
-        )
-      ) {
-        return [...acc, mappedArtist]
-      }
-
-      return acc
+      return [...acc, mappedArtist]
     }, [])
-  }, [data, search])
+  }, [data])
 
   if (isLoading) return null
 
