@@ -35,7 +35,7 @@ jobs:
       - name: Build Project
         run: pnpm build # Ensure this command generates the build folder
 
-      - name: Debug: List Build Directory
+      - name: List Build Directory
         run: ls -la ./build # Confirm the build folder exists
 
       - name: Upload Prebuilt Files
