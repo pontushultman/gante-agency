@@ -9,7 +9,7 @@ const StyledBackgroundImage = styled.div`
   font-size: 1.5em;
   text-transform: uppercase;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 `
 
 type FullScreenBackgroundProps = {
