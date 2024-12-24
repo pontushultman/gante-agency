@@ -12,6 +12,8 @@ import { useArtistByIdQuery } from "../../../sanity/useClient"
 import { useNavigationContext } from "../../../setup/NavigationProvider"
 import { ArtistModel } from "../../../sanity/sanityClient"
 
+const s = "asd"
+
 export const artistDetailPath = "/artists/:id"
 
 const hasSocialLink = (artist: ArtistModel) => {
