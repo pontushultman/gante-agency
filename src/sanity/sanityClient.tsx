@@ -7,8 +7,6 @@ const client = createClient({
   dataset: "production",
   apiVersion: "2024-11-05",
   useCdn: true
-  //   token:
-  //     "skoor70QVuvf0hqCQNXsJE3x2uTs9Zim80MeHNQqEK0mShL1lQBBAiWntDSVajpZ1FgRGgBkynWMnOhhnD77HBmE0JbgJIbOsAiHUzeGnxzE8KzN5Luy34YdNCWsJZ0GGEIIVeFtKTW7Lhh2B7javJ6t4ZlSD4oDKqdNncfF0Tgxy0RWP0Xi"
 })
 
 export type ArtistModel = Omit<Artists, "musicFormat" | "artistType"> & {
