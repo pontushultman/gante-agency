@@ -26,17 +26,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
+          node-version: 16
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Project
+        run: pnpm build
+
+      - name: Debug: List Build Directory
+        run: ls -la ./build
+
+      - name: Upload Prebuilt Files
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
 
   # Deployment job
   deploy:
