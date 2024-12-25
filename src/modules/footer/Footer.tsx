@@ -9,33 +9,36 @@ export const Footer = () => {
   return (
     <Box
       display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
       width="100%"
       padding={2}
-      flexDirection="column"
+      margin="0 auto"
       rowGap={2}
-      marginLeft="40%"
     >
-      <Box display="flex" flexDirection="row" width="100%">
-        <Box display="flex" flexDirection="row" width="50%">
-          <Box display="flex" flexDirection="column">
-            <CaptionTypography>Gante Agency</CaptionTypography>
-            <FooterText>Herrgårdsgatan 10,</FooterText>
-            <FooterText>65213 Karlstad</FooterText>
-            <FooterLink>
-              <a href="mailto:booking@ganteagency.com">
-                booking@ganteagency.com
-              </a>
-            </FooterLink>
-            <FooterLink>
-              <a href="tel:0725677392">0725677392</a>
-            </FooterLink>
-          </Box>
-        </Box>
+      {/* Address and Contact */}
+      <Box display="flex" flexDirection="column" alignItems="center" rowGap={1}>
+        <CaptionTypography>Gante Agency</CaptionTypography>
+        <FooterText>Herrgårdsgatan 10,</FooterText>
+        <FooterText>65213 Karlstad</FooterText>
+        <FooterLink>
+          <a href="mailto:booking@ganteagency.com">booking@ganteagency.com</a>
+        </FooterLink>
+        <FooterLink>
+          <a href="tel:0725677392">0725677392</a>
+        </FooterLink>
       </Box>
 
-      <Box display="flex" flexDirection="row">
+      {/* Copyright */}
+      <Box
+        display="flex"
+        flexDirection="row"
+        alignItems="center"
+        justifyContent="center"
+      >
         <CaptionTypography>
-          COPYRIGHT 2025 | GANTE ANGECY |{" "}
+          COPYRIGHT 2025 | GANTE AGENCY |{" "}
           <GuiIconButton
             size="xs"
             onClick={() =>
@@ -61,7 +64,7 @@ type FooterTextProps = {
 
 const FooterText = ({ children }: FooterTextProps) => {
   return (
-    <SubTitle fontSize="1rem" sx={{ fontSize: "bold" }}>
+    <SubTitle fontSize="1rem" sx={{ fontWeight: "bold" }}>
       {children}
     </SubTitle>
   )
