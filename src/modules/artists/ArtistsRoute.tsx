@@ -11,7 +11,7 @@ type ArtistsProps = {
 
 export const Artists = ({ disableBacknavigation }: ArtistsProps) => {
   return (
-    <>
+    <Box paddingTop={2}>
       <PageTopSection
         description="Book our artists for your event"
         subtitle="The family"
@@ -27,7 +27,7 @@ export const Artists = ({ disableBacknavigation }: ArtistsProps) => {
       >
         <ArtistsSection />
       </Box>
-    </>
+    </Box>
   )
 }
 
