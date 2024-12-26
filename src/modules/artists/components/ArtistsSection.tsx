@@ -26,7 +26,13 @@ const ArtistsSection = () => {
   if (isLoading) return null
 
   return (
-    <Box sx={{ padding: 4 }} display="flex" flexDirection="column" gap={2}>
+    <Box
+      sx={{ padding: 4 }}
+      width="100%"
+      display="flex"
+      flexDirection="column"
+      gap={2}
+    >
       <Grid container spacing={3}>
         {mappedData.map((artist, index) => (
           <AnimationGrid
