@@ -28,18 +28,16 @@ export const GetInTouchButtoFixedButton = () => {
 
 export const HomeRoute = () => {
   return (
-    <>
+    <Box display="flex" flexDirection="column" rowGap={2}>
       <FullScreenBackground>
         <HomeTitle />
       </FullScreenBackground>
-      <Box width="100%" justifyContent="center" display="flex">
-        <Box marginTop={4} maxWidth={1200}>
-          <Artists disableBacknavigation />
-        </Box>
-      </Box>
+
+      <Artists disableBacknavigation />
+
       <Box width="100%" display="flex" justifyContent="center">
         <Footer />
       </Box>
-    </>
+    </Box>
   )
 }

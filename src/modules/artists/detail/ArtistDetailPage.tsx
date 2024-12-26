@@ -40,8 +40,7 @@ export const ArtistDetailPage = () => {
     <Box
       sx={{
         backgroundColor: "black",
-        height: "100%",
-        paddingBottom: 4
+        height: "100%"
       }}
     >
       <FullScreenBackground backgroundImage={imageUrl}>
@@ -70,6 +69,7 @@ export const ArtistDetailPage = () => {
           </Box>
         </DetailPageWrapper>
       </FullScreenBackground>
+
       <DetailPageImageSlideShow images={data.imageGallery || []} />
     </Box>
   )

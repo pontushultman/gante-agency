@@ -19,9 +19,9 @@ export const DetailPageImageSlideShow = ({
       display="flex"
       justifyContent="flex-end"
       flexDirection="column"
-      paddingX={2}
+      padding={2}
     >
-      <RotatingTypography paddingY={8} variant="h3" marginLeft="70%">
+      <RotatingTypography paddingY={8} variant="h3" marginLeft="50%">
         Images
       </RotatingTypography>
 
