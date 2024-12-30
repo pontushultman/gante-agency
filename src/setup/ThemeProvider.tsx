@@ -11,8 +11,20 @@ export const GuiThemeProvider = ({
   const mergedTheme = useMemo(() => {
     return createTheme({
       ...theme,
+      palette: {
+        ...theme.palette,
+        primary: {
+          main: "#FFF"
+        },
+        secondary: {
+          main: "#000"
+        }
+      },
       typography: {
         ...theme.typography,
+        allVariants: {
+          color: "#FFF"
+        },
         fontFamily: "Avenir Next, sans-serif"
       }
     })

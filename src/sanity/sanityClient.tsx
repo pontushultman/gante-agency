@@ -1,6 +1,11 @@
 import { createClient } from "@sanity/client"
 import EntitySet from "./db/EntitySet"
-import { Artists, ArtistType, MusicFormat } from "./generated-schema-types"
+import {
+  Artists,
+  ArtistType,
+  MusicFormat,
+  Event
+} from "./generated-schema-types"
 
 const client = createClient({
   projectId: "x200fdmv",
@@ -14,11 +19,14 @@ export type ArtistModel = Omit<Artists, "musicFormat" | "artistType"> & {
   artistType: ArtistType
 }
 
+export type EventsModel = Event
+
 class SanityDb {
   // Define your entity sets
   artists = new EntitySet<ArtistModel>("artists")
   musicFormats = new EntitySet<MusicFormat>("musicFormat")
   artistTypes = new EntitySet<ArtistType>("artistType")
+  events = new EntitySet<EventsModel>("event")
 }
 
 export const sanityDb = new SanityDb()

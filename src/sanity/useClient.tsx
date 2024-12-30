@@ -3,6 +3,17 @@ import { sanityDb } from "./sanityClient"
 
 const artistsQueryKey = ["artists"]
 
+const eventsQueryKey = ["events"]
+
+export const useEventsQuery = () => {
+  return useQuery({
+    queryKey: eventsQueryKey,
+    queryFn: async () => {
+      return await sanityDb.events.ToList()
+    }
+  })
+}
+
 export const useArtistsQuery = () => {
   return useQuery({
     queryKey: artistsQueryKey,

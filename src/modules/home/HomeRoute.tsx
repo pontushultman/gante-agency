@@ -3,8 +3,8 @@ import { useState } from "react"
 import { GuiButton } from "../../components/button/GuiButton"
 import { ContactFormDrawer } from "../../components/form/ContactForm"
 import { FullScreenBackground } from "../../components/FullScreenBackground"
-import { Artists } from "../artists/ArtistsRoute"
-import { Footer } from "../footer/Footer"
+import HamburgerMenu from "../menu/HamburgerMenu"
+import { MenuPage } from "../menu/MenuPage"
 import { HomeTitle } from "./components/HomeTitle"
 
 export const homePath = "*"
@@ -27,17 +27,27 @@ export const GetInTouchButtoFixedButton = () => {
 }
 
 export const HomeRoute = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <Box display="flex" flexDirection="column" rowGap={2}>
-      <FullScreenBackground>
-        <HomeTitle />
-      </FullScreenBackground>
+      {/* <GetInTouchButtoFixedButton /> */}
+      <HamburgerMenu
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        open={isMenuOpen}
+      />
 
-      <Artists disableBacknavigation />
-
-      <Box width="100%" display="flex" justifyContent="center">
-        <Footer />
-      </Box>
+      <>
+        {!isMenuOpen ? (
+          <>
+            <FullScreenBackground>
+              <HomeTitle />
+            </FullScreenBackground>
+          </>
+        ) : (
+          <MenuPage onHomeClick={() => setIsMenuOpen(false)} />
+        )}
+      </>
     </Box>
   )
 }

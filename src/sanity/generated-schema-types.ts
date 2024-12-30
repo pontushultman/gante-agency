@@ -174,4 +174,53 @@ export interface ArtistType extends SanityDocument {
   artistType?: string;
 }
 
-export type Documents = Artists | MusicFormat | ArtistType;
+/**
+ * Event
+ *
+ *
+ */
+export interface Event extends SanityDocument {
+  _type: "event";
+
+  /**
+   * Date — `datetime`
+   *
+   * Date and time of the event
+   */
+  date?: string;
+
+  /**
+   * Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Artist Playing — `reference`
+   *
+   * Select the artist playing at the event
+   */
+  artist?: SanityReference<Artists>;
+
+  /**
+   * Ticket Link — `url`
+   *
+   * Link to buy tickets for the event
+   */
+  ticketLink?: string;
+}
+
+export type Documents = Artists | MusicFormat | ArtistType | Event;

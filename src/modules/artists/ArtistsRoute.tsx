@@ -18,15 +18,8 @@ export const Artists = ({ disableBacknavigation }: ArtistsProps) => {
         title="DJS & ARTISTS"
         disableBacknavigation={disableBacknavigation}
       />
-      <Box
-        display="flex"
-        width="100%"
-        sx={{
-          backgroundColor: "black"
-        }}
-      >
-        <ArtistsSection />
-      </Box>
+
+      <ArtistsSection />
     </Box>
   )
 }
