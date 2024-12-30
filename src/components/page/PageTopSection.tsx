@@ -5,7 +5,7 @@ import { CaptionTypography } from "../typography/CaptionTypography"
 type PageTopSectionProps = {
   title: string
   subtitle: string
-  description: string
+  description?: string
   disableBacknavigation?: boolean
 }
 
@@ -26,7 +26,8 @@ export const PageTopSection = ({
           color: "#fff",
           textAlign: "center",
           fontFamily: "Arial, sans-serif",
-          overflow: "hidden"
+          overflow: "hidden",
+          paddingTop: 2
         }}
       >
         <Box sx={{ maxWidth: 600, margin: "0 auto" }}>

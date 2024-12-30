@@ -7,10 +7,10 @@ export const GuiButton = (props: ButtonProps) => {
       sx={{
         ...props.sx,
         borderRadius: "3.75rem",
+        border: "2px solid #fff",
         "&:hover": {
           backgroundColor: "red",
-          borderColor: "red",
-          color: "#000"
+          borderColor: "red"
         }
       }}
       variant="outlined"

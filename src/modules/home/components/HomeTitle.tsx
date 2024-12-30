@@ -48,7 +48,7 @@ export const HomeTitle = () => {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      height="100%"
+      height="91%"
       width="100%"
     >
       <SubTitle fontSize="1.125rem">Welcome to</SubTitle>
@@ -58,6 +58,7 @@ export const HomeTitle = () => {
           facebookUrl="https://www.facebook.com/gabriel.hammarsten"
           instagramUrl="https://www.instagram.com/gante_agency/"
           mapUrl="https://maps.app.goo.gl/1rb8NXKRSrCcgdJ5A"
+          mailUrl="booking@ganteagency.com"
         />
       </Box>
     </Box>

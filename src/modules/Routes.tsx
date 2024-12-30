@@ -6,12 +6,14 @@ import {
   ArtistDetailPage,
   artistDetailPath
 } from "./artists/detail/ArtistDetailPage"
+import { getInTouchPath, GetInTouchRoute } from "./get-in-touch/GetInTouchRoute"
 
 export type UnionPath =
   | typeof homePath
   | typeof artistsPath
   | typeof eventsPath
   | typeof artistDetailPath
+  | typeof getInTouchPath
 
 export type RouteConfig = {
   path: string
@@ -34,5 +36,9 @@ export const routes: RouteConfig[] = [
   {
     path: artistDetailPath,
     element: <ArtistDetailPage />
+  },
+  {
+    path: getInTouchPath,
+    element: <GetInTouchRoute />
   }
 ]

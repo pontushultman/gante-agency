@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Map, YouTube } from "@mui/icons-material"
+import { Facebook, Instagram, Mail, Map, YouTube } from "@mui/icons-material"
 import { Grid } from "@mui/material"
 import { GuiIconButton } from "../button/GuiIconButton"
 import Spotify from "../assets/Spotify"
@@ -9,6 +9,7 @@ export type ConnectProps = {
   instagramUrl?: string
   spotifyUrl?: string
   mapUrl?: string
+  mailUrl?: string
 }
 
 // Define the possible keys as a union type
@@ -18,6 +19,7 @@ type SocialLinkKey =
   | "instagramUrl"
   | "spotifyUrl"
   | "mapUrl"
+  | "mailUrl"
 
 const size = "small"
 
@@ -26,7 +28,8 @@ const socialLinks: { icon: React.ElementType; urlKey: SocialLinkKey }[] = [
   { icon: YouTube, urlKey: "youtubeUrl" },
   { icon: Instagram, urlKey: "instagramUrl" },
   { icon: Spotify, urlKey: "spotifyUrl" },
-  { icon: Map, urlKey: "mapUrl" }
+  { icon: Map, urlKey: "mapUrl" },
+  { icon: Mail, urlKey: "mailUrl" }
 ]
 
 export const Connect = ({
@@ -34,14 +37,16 @@ export const Connect = ({
   instagramUrl,
   spotifyUrl,
   youtubeUrl,
-  mapUrl
+  mapUrl,
+  mailUrl
 }: ConnectProps) => {
   const urls: Record<SocialLinkKey, string | undefined> = {
     facebookUrl,
     youtubeUrl,
     instagramUrl,
     spotifyUrl,
-    mapUrl
+    mapUrl,
+    mailUrl
   }
 
   return (
@@ -54,7 +59,14 @@ export const Connect = ({
           <Grid item key={urlKey}>
             <GuiIconButton
               size={size}
-              onClick={() => window.open(url, "_blank")}
+              onClick={() => {
+                if (urlKey === "mailUrl") {
+                  window.location.href = `mailto:${url}`
+                  return
+                }
+
+                window.open(url, "_blank")
+              }}
             >
               <Icon fontSize={size} />
             </GuiIconButton>

@@ -39,8 +39,9 @@ export const GuiIconButton = ({
         width: getSize(size || "medium"),
         height: getSize(size || "medium"),
         "&:hover": {
-          backgroundColor: "#fff",
-          color: "#000"
+          backgroundColor: "red",
+
+          border: "red"
         }
       }}
     >
