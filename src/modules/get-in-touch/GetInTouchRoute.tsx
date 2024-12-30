@@ -1,8 +1,8 @@
 import { Box } from "@mui/material"
-import { ReactNode } from "react"
-import PageTopSection from "../../components/page/PageTopSection"
-import { SubTitle } from "../../components/typography/SubTitle"
 import { Connect } from "../../components/connect/Connect"
+import { GuiLink } from "../../components/link/GuiLink"
+import PageTopSection from "../../components/page/PageTopSection"
+import { ManagementSection } from "./ManagementSection"
 
 export const getInTouchPath = "/get-in-touch"
 
@@ -10,10 +10,13 @@ export const GetInTouchRoute = () => {
   return (
     <>
       <PageTopSection subtitle="Get in touch with" title="Gante Agency" />
+
+      <ManagementSection />
+
       <Box display="flex" flexDirection="column" alignItems="center" rowGap={2}>
-        <FooterLink>
+        <GuiLink>
           <a href="mailto:booking@ganteagency.com">booking@ganteagency.com</a>
-        </FooterLink>
+        </GuiLink>
         <Box>
           <Connect
             facebookUrl="https://www.facebook.com/gabriel.hammarsten"
@@ -24,38 +27,5 @@ export const GetInTouchRoute = () => {
         </Box>
       </Box>
     </>
-  )
-}
-
-type FooterTextProps = {
-  children: ReactNode
-}
-
-const FooterText = ({ children }: FooterTextProps) => {
-  return (
-    <SubTitle fontSize="1rem" sx={{ fontWeight: "bold" }}>
-      {children}
-    </SubTitle>
-  )
-}
-
-const FooterLink = ({ children }: FooterTextProps) => {
-  return (
-    <SubTitle
-      fontSize="1rem"
-      sx={{
-        fontWeight: "bold",
-        "& a": {
-          textDecoration: "none",
-          color: "inherit"
-        },
-        "& a:hover": {
-          textDecoration: "underline",
-          cursor: "pointer"
-        }
-      }}
-    >
-      {children}
-    </SubTitle>
   )
 }

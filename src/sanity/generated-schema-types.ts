@@ -223,4 +223,53 @@ export interface Event extends SanityDocument {
   ticketLink?: string;
 }
 
-export type Documents = Artists | MusicFormat | ArtistType | Event;
+/**
+ * Management
+ *
+ *
+ */
+export interface Management extends SanityDocument {
+  _type: "management";
+
+  /**
+   * Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Role — `string`
+   *
+   *
+   */
+  role?: string;
+
+  /**
+   * Phone — `string`
+   *
+   *
+   */
+  phone?: string;
+
+  /**
+   * Mail — `string`
+   *
+   *
+   */
+  mail?: string;
+}
+
+export type Documents = Artists | MusicFormat | ArtistType | Event | Management;

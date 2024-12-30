@@ -5,11 +5,22 @@ const artistsQueryKey = ["artists"]
 
 const eventsQueryKey = ["events"]
 
+const managementQueryKey = ["management"]
+
 export const useEventsQuery = () => {
   return useQuery({
     queryKey: eventsQueryKey,
     queryFn: async () => {
       return await sanityDb.events.ToList()
+    }
+  })
+}
+
+export const useManagementQuery = () => {
+  return useQuery({
+    queryKey: managementQueryKey,
+    queryFn: async () => {
+      return await sanityDb.management.ToList()
     }
   })
 }

@@ -1,11 +1,12 @@
-import { Box } from "@mui/material"
+import { Box, SxProps, Theme } from "@mui/material"
 
 type GuiSectionImageProps<T> = {
   imageUrl?: string | null
-  onClick: () => void
+  onClick?: () => void
   alt?: string
   item: T
   renderItem: (item: T) => React.ReactNode
+  sx?: SxProps<Theme>
 }
 
 export function GuiSectionImage<T>({
@@ -13,21 +14,23 @@ export function GuiSectionImage<T>({
   onClick,
   alt,
   item,
-  renderItem
+  renderItem,
+  sx
 }: GuiSectionImageProps<T>) {
   return (
     <Box
       onClick={onClick}
       sx={{
+        ...sx,
         position: "relative",
         cursor: "pointer",
         borderRadius: 2,
         overflow: "hidden",
         "&:hover .overlay": {
-          opacity: 0.3
+          opacity: onClick ? 0.3 : undefined
         },
         "&:hover .content": {
-          color: "#f00"
+          color: onClick ? "#f00" : undefined
         }
       }}
     >
