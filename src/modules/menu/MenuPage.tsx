@@ -32,7 +32,7 @@ type MenuItemProps = {
 export const MenuItem = ({ label, onClick }: MenuItemProps) => {
   return (
     <Typography
-      variant="h3"
+      variant="h2"
       fontWeight="bold"
       onClick={onClick}
       sx={{

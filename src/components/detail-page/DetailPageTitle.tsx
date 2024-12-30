@@ -10,9 +10,9 @@ type DetailPageTitleProps = {
 export const DetailPageTitle = ({ title, subTitle }: DetailPageTitleProps) => {
   return (
     <Box display="flex" flexDirection="column" justifyContent="center">
-      <SubTitle fontSize="1.125rem">{subTitle}</SubTitle>
+      <SubTitle fontSize="1.3rem">{subTitle}</SubTitle>
 
-      <RotatingTypography variant="h3">{title}</RotatingTypography>
+      <RotatingTypography variant="h2">{title}</RotatingTypography>
     </Box>
   )
 }

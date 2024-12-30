@@ -21,7 +21,7 @@ type SocialLinkKey =
   | "mapUrl"
   | "mailUrl"
 
-const size = "small"
+const size = "medium"
 
 const socialLinks: { icon: React.ElementType; urlKey: SocialLinkKey }[] = [
   { icon: Facebook, urlKey: "facebookUrl" },

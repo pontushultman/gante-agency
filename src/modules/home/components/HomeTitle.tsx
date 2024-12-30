@@ -51,8 +51,8 @@ export const HomeTitle = () => {
       height="91%"
       width="100%"
     >
-      <SubTitle fontSize="1.125rem">Welcome to</SubTitle>
-      <StyledTypography fontSize="5.75rem">Gante Agency</StyledTypography>
+      <SubTitle fontSize="1.5rem">Welcome to</SubTitle>
+      <StyledTypography fontSize="6.5rem">Gante Agency</StyledTypography>
       <Box>
         <Connect
           facebookUrl="https://www.facebook.com/gabriel.hammarsten"

@@ -25,7 +25,7 @@ const HamburgerMenu = ({ onClick, open }: HamburgerMenuProps) => {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
       >
-        <MenuIcon />
+        <MenuIcon fontSize="large" />
       </GuiButton>
     </Box>
   )

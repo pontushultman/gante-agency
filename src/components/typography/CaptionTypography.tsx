@@ -6,7 +6,7 @@ export const CaptionTypography = (props: PropsWithChildren) => {
     <Typography
       variant="caption"
       sx={{
-        fontSize: 12,
+        fontSize: 16,
         letterSpacing: 2,
         color: "#bbb"
       }}
