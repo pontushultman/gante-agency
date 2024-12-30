@@ -31,7 +31,7 @@ export const GetInTouchButtoFixedButton = () => {
   return (
     <>
       <GuiButton
-        sx={{ position: "fixed", top: "5%", left: "2rem" }}
+        sx={{ position: "fixed", top: "5%", left: "2rem", zIndex: 1000 }}
         onClick={() => navigateTo("/get-in-touch")}
       >
         <Typography fontSize={14} fontWeight="bold">
