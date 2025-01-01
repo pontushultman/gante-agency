@@ -24,7 +24,7 @@ export const EventCard = ({ event }: EventCardProps) => {
               className="content"
               sx={{
                 position: "absolute",
-                top: 16,
+                bottom: 60,
                 left: 16,
                 color: "#fff"
               }}
@@ -78,8 +78,8 @@ export const EventCard = ({ event }: EventCardProps) => {
                   Buy Tickets
                 </Button>
                 <Box display="flex" flexDirection="column">
-                  <Typography>{toLocaleDateTime(event.date)}</Typography>
                   <Typography>{event.location}</Typography>
+                  <Typography>{toLocaleDateTime(event.date)}</Typography>
                 </Box>
               </Box>
             </Box>
