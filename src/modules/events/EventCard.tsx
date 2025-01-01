@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import { GuiSectionImage } from "../../components/section/GuiSectionImage"
 import { urlFor } from "../../sanity/image"
 import { EventsModel } from "../../sanity/sanityClient"
@@ -17,7 +17,6 @@ export const EventCard = ({ event }: EventCardProps) => {
     <GuiSectionImage
       imageUrl={imageUrl}
       item={event}
-      onClick={() => window.open(event.ticketLink, "_blank")}
       renderItem={(event) => {
         return (
           <>
@@ -26,19 +25,6 @@ export const EventCard = ({ event }: EventCardProps) => {
               sx={{
                 position: "absolute",
                 top: 16,
-                left: 16,
-                color: "#fff"
-              }}
-            >
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                Get tickets now
-              </Typography>
-            </Box>
-            <Box
-              className="content"
-              sx={{
-                position: "absolute",
-                bottom: 16,
                 left: 16,
                 color: "#fff"
               }}
@@ -52,11 +38,49 @@ export const EventCard = ({ event }: EventCardProps) => {
                 }}
               >
                 <Typography
-                  variant="h6"
+                  variant="h5"
                   sx={{ fontWeight: "bold", color: "white" }}
                 >
-                  {event.description} {toLocaleDateTime(event.date)}
+                  {event.name}
                 </Typography>
+              </Box>
+            </Box>
+            <Box
+              display="flex"
+              flexDirection="row"
+              height="30px"
+              width="100%"
+              padding={2}
+              alignItems="center"
+              sx={{
+                backgroundColor: "gray",
+                position: "absolute",
+                bottom: 0
+              }}
+            >
+              <Box
+                className="content"
+                gap={1}
+                sx={{
+                  position: "absolute",
+                  bottom: 8,
+                  width: "100%",
+                  color: "#fff",
+                  display: "flex",
+                  alignItems: "center"
+                }}
+              >
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => window.open(event.ticketLink, "_blank")}
+                >
+                  Buy Tickets
+                </Button>
+                <Box display="flex" flexDirection="column">
+                  <Typography>{toLocaleDateTime(event.date)}</Typography>
+                  <Typography>{event.location}</Typography>
+                </Box>
               </Box>
             </Box>
           </>

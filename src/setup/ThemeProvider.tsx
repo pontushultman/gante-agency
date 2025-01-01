@@ -17,7 +17,7 @@ export const GuiThemeProvider = ({
           main: "#FFF"
         },
         secondary: {
-          main: "#000"
+          main: "#F40000"
         }
       },
       typography: {

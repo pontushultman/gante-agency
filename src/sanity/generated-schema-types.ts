@@ -202,11 +202,25 @@ export interface Event extends SanityDocument {
   };
 
   /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
    * Description — `text`
    *
    *
    */
   description?: string;
+
+  /**
+   * Location — `string`
+   *
+   *
+   */
+  location?: string;
 
   /**
    * Artist Playing — `reference`
