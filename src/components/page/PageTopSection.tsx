@@ -1,11 +1,12 @@
 import { Box, Typography } from "@mui/material"
 import { HomeNavigationButton } from "../button/HomeNavigationButton"
 import { CaptionTypography } from "../typography/CaptionTypography"
+import { ReactNode } from "react"
 
 type PageTopSectionProps = {
   title: string
   subtitle: string
-  description?: string
+  description?: string | ReactNode
   disableBacknavigation?: boolean
 }
 
