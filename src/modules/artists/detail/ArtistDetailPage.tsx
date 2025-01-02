@@ -47,25 +47,28 @@ export const ArtistDetailPage = () => {
         <HomeNavigationButton
           onBackNavigation={() => navigate.navigateTo("*")}
         />
-        {hasSocialLink(data) && (
-          <Box marginLeft={12} mt={4}>
-            <ConnectSection
-              title={`Connect with me`}
-              connectProps={{
-                facebookUrl: data.socialLinks?.facebook,
-                instagramUrl: data.socialLinks?.instagram,
-                spotifyUrl: data.socialLinks?.spotify,
-                youtubeUrl: data.socialLinks?.youtube
-              }}
-            />
-          </Box>
-        )}
+
         <DetailPageWrapper>
           <Box display="flex" flexDirection="column" gap={2}>
-            <DetailPageTitle subTitle="Family" title={data.name || ""} />
+            <Box display="flex" flexDirection="row" alignItems="center">
+              <DetailPageTitle subTitle="Family" title={data.name || ""} />
+            </Box>
+
             <GuiChip label={data.artistType?.artistType || ""} />
 
             <Paragraphs paragraphs={paragraphs} />
+
+            {hasSocialLink(data) && (
+              <ConnectSection
+                title={`Connect with me`}
+                connectProps={{
+                  facebookUrl: data.socialLinks?.facebook,
+                  instagramUrl: data.socialLinks?.instagram,
+                  spotifyUrl: data.socialLinks?.spotify,
+                  youtubeUrl: data.socialLinks?.youtube
+                }}
+              />
+            )}
           </Box>
         </DetailPageWrapper>
       </FullScreenBackground>

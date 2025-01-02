@@ -12,7 +12,7 @@ export const ConnectSection = ({
   connectProps
 }: ConnectSectionProps) => {
   return (
-    <Box display="flex" flexDirection="column">
+    <Box display="flex" flexDirection="column" gap={1}>
       <SubTitle fontSize="0.75rem">{title}</SubTitle>
       <Connect {...connectProps} />
     </Box>
