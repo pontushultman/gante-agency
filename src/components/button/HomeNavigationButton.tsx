@@ -2,6 +2,7 @@ import { ArrowBack, Home } from "@mui/icons-material"
 import { Box } from "@mui/material"
 import { useNavigationContext } from "../../setup/NavigationProvider"
 import { GuiIconButton } from "./GuiIconButton"
+import { GuiButton } from "./GuiButton"
 
 type HomeNavigationButtonProps = {
   onBackNavigation?: () => void
@@ -17,19 +18,21 @@ export const HomeNavigationButton = ({
       sx={{
         display: "flex",
         alignItems: "center",
-        padding: "20px 20px"
+        justifyContent: "center",
+        padding: "20px 20px",
+        width: "100%"
       }}
     >
       {onBackNavigation && (
-        <GuiIconButton onClick={onBackNavigation}>
-          <ArrowBack />
-        </GuiIconButton>
+        <GuiButton onClick={onBackNavigation}>
+          <ArrowBack fontSize="large" />
+        </GuiButton>
       )}
 
       {!onBackNavigation && (
-        <GuiIconButton onClick={() => navigate.navigateTo("*")}>
-          <Home />
-        </GuiIconButton>
+        <GuiButton onClick={() => navigate.navigateTo("*")}>
+          <Home fontSize="large" />
+        </GuiButton>
       )}
     </Box>
   )

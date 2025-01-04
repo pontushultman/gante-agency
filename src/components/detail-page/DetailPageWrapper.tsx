@@ -11,9 +11,8 @@ export const DetailPageWrapper = ({
       height="100%"
       alignItems="center"
       display="flex"
-      marginRight="80%"
-      marginLeft="20%"
-      maxWidth={700}
+      marginRight="90%"
+      marginLeft="10%"
     >
       {children}
     </Box>

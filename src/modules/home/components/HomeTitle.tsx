@@ -48,11 +48,12 @@ export const HomeTitle = () => {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      textAlign="center"
       height="91%"
       width="100%"
     >
       <SubTitle fontSize="1.5rem">Welcome to</SubTitle>
-      <StyledTypography fontSize="6.5rem">Gante Agency</StyledTypography>
+      <StyledTypography fontSize="5rem">Gante Agency</StyledTypography>
       <Box>
         <Connect
           facebookUrl="https://www.facebook.com/gabriel.hammarsten"

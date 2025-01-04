@@ -32,20 +32,18 @@ export const GetInTouchButtoFixedButton = () => {
   if (hidden) return null
 
   return (
-    <>
-      <GuiButton
-        sx={{ position: "fixed", top: "5%", left: "2rem", zIndex: 1000 }}
-        onClick={() => navigateTo("/get-in-touch")}
-      >
-        <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
-          {!isSmallMobile && (
-            <Typography fontSize={20} fontWeight="bold">
-              Get in touch
-            </Typography>
-          )}
-          <Phone />
-        </Box>
-      </GuiButton>
-    </>
+    <GuiButton
+      sx={{ position: "fixed", top: "5%", left: "2rem", zIndex: 1000 }}
+      onClick={() => navigateTo("/get-in-touch")}
+    >
+      <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
+        {!isSmallMobile && (
+          <Typography fontSize={20} fontWeight="bold">
+            Get in touch
+          </Typography>
+        )}
+        <Phone fontSize="large" />
+      </Box>
+    </GuiButton>
   )
 }

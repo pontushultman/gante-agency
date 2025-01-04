@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box, BoxProps, Typography } from "@mui/material"
 import { useParams } from "react-router-dom"
 import { HomeNavigationButton } from "../../../components/button/HomeNavigationButton"
 import { GuiChip } from "../../../components/chip/GuiChip"
@@ -86,7 +86,7 @@ export const Paragraphs = ({ paragraphs }: ParagraphsProps) => {
   if (!paragraphs) return null
 
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box display="flex" flexDirection="column" gap={2} maxWidth="80vw">
       {paragraphs.map((paragraph, index) => (
         <Typography
           color="#bbbbbb"
