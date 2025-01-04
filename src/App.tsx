@@ -1,10 +1,10 @@
+import { People } from "@mui/icons-material"
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { AppNavigation } from "./AppNavigation"
 import { GuiButton } from "./components/button/GuiButton"
 import { useNavigationContext } from "./setup/NavigationProvider"
 import { GuiThemeProvider } from "./setup/ThemeProvider"
-import { Phone } from "@mui/icons-material"
 
 const queryClient = new QueryClient()
 
@@ -39,10 +39,10 @@ export const GetInTouchButtoFixedButton = () => {
       <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
         {!isSmallMobile && (
           <Typography fontSize={20} fontWeight="bold">
-            Get in touch
+            Connect with us
           </Typography>
         )}
-        <Phone fontSize="large" />
+        <People fontSize="large" />
       </Box>
     </GuiButton>
   )

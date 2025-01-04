@@ -31,7 +31,7 @@ export const PageTopSection = ({
           paddingTop: 2
         }}
       >
-        <Box sx={{ maxWidth: 600, margin: "0 auto" }}>
+        <Box>
           <CaptionTypography>{subtitle}</CaptionTypography>
           <Typography
             variant="h1"

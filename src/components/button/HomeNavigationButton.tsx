@@ -1,7 +1,6 @@
 import { ArrowBack, Home } from "@mui/icons-material"
 import { Box } from "@mui/material"
 import { useNavigationContext } from "../../setup/NavigationProvider"
-import { GuiIconButton } from "./GuiIconButton"
 import { GuiButton } from "./GuiButton"
 
 type HomeNavigationButtonProps = {
@@ -19,7 +18,7 @@ export const HomeNavigationButton = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "20px 20px",
+        paddingTop: "20px",
         width: "100%"
       }}
     >

@@ -1,4 +1,4 @@
-import { Box, BoxProps, Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { useParams } from "react-router-dom"
 import { HomeNavigationButton } from "../../../components/button/HomeNavigationButton"
 import { GuiChip } from "../../../components/chip/GuiChip"
@@ -8,9 +8,9 @@ import { DetailPageTitle } from "../../../components/detail-page/DetailPageTitle
 import { DetailPageWrapper } from "../../../components/detail-page/DetailPageWrapper"
 import { FullScreenBackground } from "../../../components/FullScreenBackground"
 import { urlFor } from "../../../sanity/image"
+import { ArtistModel } from "../../../sanity/sanityClient"
 import { useArtistByIdQuery } from "../../../sanity/useClient"
 import { useNavigationContext } from "../../../setup/NavigationProvider"
-import { ArtistModel } from "../../../sanity/sanityClient"
 
 export const artistDetailPath = "/artists/:id"
 
@@ -29,11 +29,9 @@ export const ArtistDetailPage = () => {
   const id = useParams<{ id: string }>().id
 
   const { data } = useArtistByIdQuery(id)
-
   if (!data) return null
 
   const imageUrl = urlFor(data.image).width(2560).height(1440).url()
-
   const paragraphs = data.bio?.split("\n")
 
   return (
