@@ -25,7 +25,9 @@ export default App
 export const GetInTouchButtoFixedButton = () => {
   const { navigateTo } = useNavigationContext()
   const theme = useTheme()
-  const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"))
+  const isSmallMobile = useMediaQuery(
+    theme.breakpoints.down("sm") || theme.breakpoints.down("xs")
+  )
 
   const hidden = window.location.pathname === "/get-in-touch"
 
