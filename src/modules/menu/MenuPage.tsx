@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material"
 import { useNavigationContext } from "../../setup/NavigationProvider"
+import { colors } from "../../components/colors"
 
 type MenuPageProps = {
   onHomeClick: () => void
@@ -38,7 +39,7 @@ export const MenuItem = ({ label, onClick }: MenuItemProps) => {
       sx={{
         cursor: "pointer",
         "&:hover": {
-          color: "red"
+          color: colors.bgColor
         }
       }}
     >

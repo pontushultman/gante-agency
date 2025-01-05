@@ -49,7 +49,10 @@ export const ArtistDetailPage = () => {
         <DetailPageWrapper>
           <Box display="flex" flexDirection="column" gap={2}>
             <Box display="flex" flexDirection="row" alignItems="center">
-              <DetailPageTitle subTitle="Family" title={data.name || ""} />
+              <DetailPageTitle
+                subTitle="Vibe creator"
+                title={data.name || ""}
+              />
             </Box>
 
             <GuiChip label={data.artistType?.artistType || ""} />

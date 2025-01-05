@@ -1,4 +1,5 @@
 export const colors = {
-    hover: 'red',
+    hover: '#F96167',
+    bgColor: '#F96167',
     primary: '#fff',
 }

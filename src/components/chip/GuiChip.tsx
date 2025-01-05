@@ -10,7 +10,7 @@ export const GuiChip = ({ label }: GuiChipProps) => {
       key={label}
       label={label}
       sx={{
-        backgroundColor: "#e53935",
+        backgroundColor: (theme) => theme.palette.secondary.main,
         maxWidth: "fit-content",
         maxHeight: 20,
         color: "#fff",

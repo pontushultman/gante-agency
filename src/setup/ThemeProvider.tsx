@@ -1,5 +1,6 @@
 import { ThemeProvider, createTheme, useTheme } from "@mui/material"
 import React, { useMemo } from "react"
+import { colors } from "../components/colors"
 
 export const GuiThemeProvider = ({
   children
@@ -17,7 +18,7 @@ export const GuiThemeProvider = ({
           main: "#FFF"
         },
         secondary: {
-          main: "#F40000"
+          main: colors.bgColor
         }
       },
       typography: {

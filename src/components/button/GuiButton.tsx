@@ -1,4 +1,5 @@
 import { Button, ButtonProps } from "@mui/material"
+import { colors } from "../colors"
 
 export const GuiButton = (props: ButtonProps) => {
   return (
@@ -9,8 +10,8 @@ export const GuiButton = (props: ButtonProps) => {
         borderRadius: "3.75rem",
         border: "2px solid #fff",
         "&:hover": {
-          backgroundColor: "red",
-          borderColor: "red"
+          backgroundColor: colors.bgColor,
+          borderColor: colors.bgColor
         }
       }}
       variant="outlined"

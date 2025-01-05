@@ -13,7 +13,7 @@ export const Artists = ({ disableBacknavigation }: ArtistsProps) => {
     <>
       <PageTopSection
         description="Book our artists for your event"
-        subtitle="The family"
+        subtitle="The vibe creators"
         title="DJS & ARTISTS"
         disableBacknavigation={disableBacknavigation}
       />

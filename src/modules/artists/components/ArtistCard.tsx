@@ -53,7 +53,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
                   key={label.musicFormat}
                   label={label.musicFormat}
                   sx={{
-                    backgroundColor: "#e53935",
+                    backgroundColor: (theme) => theme.palette.secondary.main,
                     color: "#fff",
                     fontSize: 12,
                     fontWeight: "bold",

@@ -1,4 +1,5 @@
 import { IconButton } from "@mui/material"
+import { colors } from "../colors"
 
 type GuiIconButtonProps = {
   onClick?: () => void
@@ -39,9 +40,8 @@ export const GuiIconButton = ({
         width: getSize(size || "medium"),
         height: getSize(size || "medium"),
         "&:hover": {
-          backgroundColor: "red",
-
-          border: "red"
+          backgroundColor: colors.bgColor,
+          border: colors.bgColor
         }
       }}
     >
