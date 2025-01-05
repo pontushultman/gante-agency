@@ -14,7 +14,7 @@ import { useNavigationContext } from "../../../setup/NavigationProvider"
 import { homePath } from "../../home/HomeRoute"
 import { routePrefix } from "../../../components/const"
 
-export const artistDetailPath = `${routePrefix}/artists/:id`
+export const artistDetailPath = `${routePrefix}artists/:id`
 
 const hasSocialLink = (artist: ArtistModel) => {
   return (
