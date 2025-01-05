@@ -4,6 +4,7 @@ import { Artists, MusicFormat } from "../../../sanity/generated-schema-types"
 import { urlFor } from "../../../sanity/image"
 import { useNavigationContext } from "../../../setup/NavigationProvider"
 import { GuiSectionImage } from "../../../components/section/GuiSectionImage"
+import { artistDetailPath } from "../detail/ArtistDetailPage"
 
 export type SlimArtist = Pick<Artists, "name" | "_id" | "image"> & {
   musicFormat: MusicFormat[]
@@ -17,7 +18,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
   const navigate = useNavigationContext()
 
   const handleClick = () => {
-    navigate.navigateTo("/artists/:id", { id: artist._id })
+    navigate.navigateTo(artistDetailPath, { id: artist._id })
   }
 
   const imageUrl = artist.image

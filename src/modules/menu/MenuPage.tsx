@@ -1,6 +1,8 @@
 import { Box, Typography } from "@mui/material"
 import { useNavigationContext } from "../../setup/NavigationProvider"
 import { colors } from "../../components/colors"
+import { artistsPath } from "../artists/ArtistsRoute"
+import { eventsPath } from "../events/EventsRoute"
 
 type MenuPageProps = {
   onHomeClick: () => void
@@ -19,8 +21,8 @@ export const MenuPage = ({ onHomeClick }: MenuPageProps) => {
       flexDirection="column"
     >
       <MenuItem label="Home" onClick={() => onHomeClick()} />
-      <MenuItem label="Artists" onClick={() => navigateTo("artists")} />
-      <MenuItem label="Events" onClick={() => navigateTo("events")} />
+      <MenuItem label="Artists" onClick={() => navigateTo(artistsPath)} />
+      <MenuItem label="Events" onClick={() => navigateTo(eventsPath)} />
     </Box>
   )
 }

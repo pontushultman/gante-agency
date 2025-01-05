@@ -1,7 +1,8 @@
+import { routePrefix } from "../../components/const"
 import PageTopSection from "../../components/page/PageTopSection"
 import { EventsSection } from "./EventsSection"
 
-export const eventsPath = "events"
+export const eventsPath = `${routePrefix}events`
 
 export const EventsRoute = () => {
   return (

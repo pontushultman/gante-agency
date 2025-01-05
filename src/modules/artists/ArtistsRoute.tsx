@@ -1,8 +1,9 @@
 import React from "react"
 import PageTopSection from "../../components/page/PageTopSection"
 import ArtistsSection from "./components/ArtistsSection"
+import { routePrefix } from "../../components/const"
 
-export const artistsPath = "artists"
+export const artistsPath = `${routePrefix}artists`
 
 type ArtistsProps = {
   disableBacknavigation?: boolean

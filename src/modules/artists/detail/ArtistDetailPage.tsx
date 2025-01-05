@@ -11,8 +11,10 @@ import { urlFor } from "../../../sanity/image"
 import { ArtistModel } from "../../../sanity/sanityClient"
 import { useArtistByIdQuery } from "../../../sanity/useClient"
 import { useNavigationContext } from "../../../setup/NavigationProvider"
+import { homePath } from "../../home/HomeRoute"
+import { routePrefix } from "../../../components/const"
 
-export const artistDetailPath = "/artists/:id"
+export const artistDetailPath = `${routePrefix}/artists/:id`
 
 const hasSocialLink = (artist: ArtistModel) => {
   return (
@@ -43,7 +45,7 @@ export const ArtistDetailPage = () => {
     >
       <FullScreenBackground backgroundImage={imageUrl}>
         <HomeNavigationButton
-          onBackNavigation={() => navigate.navigateTo("*")}
+          onBackNavigation={() => navigate.navigateTo(homePath)}
         />
 
         <DetailPageWrapper>

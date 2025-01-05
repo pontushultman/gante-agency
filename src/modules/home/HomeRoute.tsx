@@ -5,8 +5,9 @@ import { Footer } from "../footer/Footer"
 import HamburgerMenu from "../menu/HamburgerMenu"
 import { MenuPage } from "../menu/MenuPage"
 import { HomeTitle } from "./components/HomeTitle"
+import { routePrefix } from "../../components/const"
 
-export const homePath = "*"
+export const homePath = `${routePrefix}`
 
 export const HomeRoute = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
