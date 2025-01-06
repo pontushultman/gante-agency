@@ -5,6 +5,7 @@ import { AppNavigation } from "./AppNavigation"
 import { GuiButton } from "./components/button/GuiButton"
 import { useNavigationContext } from "./setup/NavigationProvider"
 import { GuiThemeProvider } from "./setup/ThemeProvider"
+import { siteInfo } from "./const"
 
 const queryClient = new QueryClient()
 
@@ -41,7 +42,7 @@ export const GetInTouchButtoFixedButton = () => {
       <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
         {!isSmallMobile && (
           <Typography fontSize={20} fontWeight="bold">
-            Connect with us
+            {siteInfo.getInTouch.buttonText}
           </Typography>
         )}
         <People fontSize="large" />

@@ -1,6 +1,7 @@
 import { Box, keyframes, styled, Typography } from "@mui/material"
 import { SubTitle } from "../../../components/typography/SubTitle"
 import { Connect } from "../../../components/connect/Connect"
+import { siteInfo } from "../../../const"
 
 const glitchAnim = keyframes`
   0% {
@@ -52,14 +53,16 @@ export const HomeTitle = () => {
       height="91%"
       width="100%"
     >
-      <SubTitle fontSize="1.5rem">Welcome to</SubTitle>
-      <StyledTypography fontSize="5rem">Gante Agency</StyledTypography>
+      <SubTitle fontSize="1.5rem">{siteInfo.home.welcome}</SubTitle>
+      <StyledTypography fontSize="5rem">
+        {siteInfo.home.agency}
+      </StyledTypography>
       <Box pt={1}>
         <Connect
-          facebookUrl="https://www.facebook.com/gabriel.hammarsten"
-          instagramUrl="https://www.instagram.com/gante_agency/"
-          mapUrl="https://maps.app.goo.gl/1rb8NXKRSrCcgdJ5A"
-          mailUrl="booking@ganteagency.com"
+          facebookUrl={siteInfo.contact.facebook}
+          instagramUrl={siteInfo.contact.instagram}
+          mapUrl={siteInfo.contact.mapUrl}
+          mailUrl={siteInfo.contact.mail}
         />
       </Box>
     </Box>

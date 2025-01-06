@@ -12,6 +12,7 @@ import { urlFor } from "../../../sanity/image"
 import { ArtistModel } from "../../../sanity/sanityClient"
 import { useArtistByIdQuery } from "../../../sanity/useClient"
 import { artistsPath } from "../ArtistsRoute"
+import { siteInfo } from "../../../const"
 
 export const artistDetailPath = `${routePrefix}artists/:id`
 
@@ -51,7 +52,7 @@ export const ArtistDetailPage = () => {
           <Box display="flex" flexDirection="column" gap={2}>
             <Box display="flex" flexDirection="row" alignItems="center">
               <DetailPageTitle
-                subTitle="Vibe creator"
+                subTitle={siteInfo.artist.subtitle}
                 title={data.name || ""}
               />
             </Box>
@@ -62,7 +63,7 @@ export const ArtistDetailPage = () => {
 
             {hasSocialLink(data) && (
               <ConnectSection
-                title={`Connect with me`}
+                title={siteInfo.artist.connect}
                 connectProps={{
                   facebookUrl: data.socialLinks?.facebook,
                   instagramUrl: data.socialLinks?.instagram,

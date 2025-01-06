@@ -3,15 +3,18 @@ import { Connect } from "../../components/connect/Connect"
 import { GuiLink } from "../../components/link/GuiLink"
 import PageTopSection from "../../components/page/PageTopSection"
 import { ManagementSection } from "./ManagementSection"
+import { siteInfo } from "../../const"
 
 export const getInTouchPath = "/get-in-touch"
 
 export const GetInTouchRoute = () => {
+  const href = `mailto:${siteInfo.contact.mail}`
+
   return (
     <>
       <PageTopSection
-        subtitle="Get in touch with"
-        title="Gante Agency"
+        subtitle={siteInfo.getInTouch.subtitle}
+        title={siteInfo.getInTouch.title}
         description={
           <Box
             display="flex"
@@ -20,16 +23,14 @@ export const GetInTouchRoute = () => {
             rowGap={2}
           >
             <GuiLink>
-              <a href="mailto:booking@ganteagency.com">
-                booking@ganteagency.com
-              </a>
+              <a href={href}>{siteInfo.contact.mail}</a>
             </GuiLink>
             <Box>
               <Connect
-                facebookUrl="https://www.facebook.com/gabriel.hammarsten"
-                instagramUrl="https://www.instagram.com/gante_agency/"
-                mapUrl="https://maps.app.goo.gl/1rb8NXKRSrCcgdJ5A"
-                mailUrl="booking@ganteagency.com"
+                facebookUrl={siteInfo.contact.facebook}
+                instagramUrl={siteInfo.contact.instagram}
+                mapUrl={siteInfo.contact.mapUrl}
+                mailUrl={siteInfo.contact.mail}
               />
             </Box>
           </Box>

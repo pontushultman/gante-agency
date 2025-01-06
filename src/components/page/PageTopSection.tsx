@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { ReactNode } from "react"
 import { homePath } from "../../modules/home/HomeRoute"
 import { BackNavigationButton } from "../button/BackNavigationButton"
@@ -17,8 +17,14 @@ export const PageTopSection = ({
   description,
   disableBacknavigation
 }: PageTopSectionProps) => {
+  const theme = useTheme()
+
+  const isMobileDevice = useMediaQuery(
+    theme.breakpoints.down("sm") || theme.breakpoints.down("xs")
+  )
+
   return (
-    <>
+    <Box pt={isMobileDevice ? 10 : 0}>
       {!disableBacknavigation && (
         <BackNavigationButton
           onBackNavigationProps={{
@@ -59,7 +65,7 @@ export const PageTopSection = ({
           </Typography>
         </Box>
       </Box>
-    </>
+    </Box>
   )
 }
 

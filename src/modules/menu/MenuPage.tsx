@@ -3,6 +3,7 @@ import { useNavigationContext } from "../../setup/NavigationProvider"
 import { colors } from "../../components/colors"
 import { artistsPath } from "../artists/ArtistsRoute"
 import { eventsPath } from "../events/EventsRoute"
+import { siteInfo } from "../../const"
 
 type MenuPageProps = {
   onHomeClick: () => void
@@ -20,9 +21,18 @@ export const MenuPage = ({ onHomeClick }: MenuPageProps) => {
       display="flex"
       flexDirection="column"
     >
-      <MenuItem label="Home" onClick={() => onHomeClick()} />
-      <MenuItem label="Artists" onClick={() => navigateTo(artistsPath)} />
-      <MenuItem label="Events" onClick={() => navigateTo(eventsPath)} />
+      <MenuItem
+        label={siteInfo.navigation.home}
+        onClick={() => onHomeClick()}
+      />
+      <MenuItem
+        label={siteInfo.navigation.artists}
+        onClick={() => navigateTo(artistsPath)}
+      />
+      <MenuItem
+        label={siteInfo.navigation.events}
+        onClick={() => navigateTo(eventsPath)}
+      />
     </Box>
   )
 }
