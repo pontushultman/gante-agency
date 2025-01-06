@@ -3,6 +3,7 @@ import { GuiSectionImage } from "../../components/section/GuiSectionImage"
 import { urlFor } from "../../sanity/image"
 import { EventsModel } from "../../sanity/sanityClient"
 import { toLocaleDateTime } from "../../utils/dateUtils"
+import { siteInfo } from "../../const"
 
 type EventCardProps = {
   event: EventsModel
@@ -70,13 +71,15 @@ export const EventCard = ({ event }: EventCardProps) => {
                   alignItems: "center"
                 }}
               >
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => window.open(event.ticketLink, "_blank")}
-                >
-                  Buy Tickets
-                </Button>
+                {event.ticketLink && (
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => window.open(event.ticketLink, "_blank")}
+                  >
+                    {siteInfo.events.eventCardButtonText}
+                  </Button>
+                )}
                 <Box display="flex" flexDirection="column">
                   <Typography>{event.location}</Typography>
                   <Typography>{toLocaleDateTime(event.date)}</Typography>

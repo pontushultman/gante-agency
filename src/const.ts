@@ -33,5 +33,6 @@ export const siteInfo = {
         title: "Gante Agency",
         subtitle: "Kolla in våra kommande evenemang",
         description: "Boka våra artister till ditt event",
+        eventCardButtonText: "Köp biljett",
     }
 }
