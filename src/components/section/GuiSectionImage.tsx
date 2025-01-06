@@ -23,7 +23,7 @@ export function GuiSectionImage<T>({
       sx={{
         ...sx,
         position: "relative",
-        cursor: "pointer",
+        cursor: onClick ? "pointer" : undefined,
         borderRadius: 2,
         overflow: "hidden",
         "&:hover .overlay": {

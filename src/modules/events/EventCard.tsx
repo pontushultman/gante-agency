@@ -40,7 +40,10 @@ export const EventCard = ({ event }: EventCardProps) => {
               >
                 <Typography
                   variant="h5"
-                  sx={{ fontWeight: "bold", color: "white" }}
+                  sx={{
+                    fontWeight: "bold",
+                    color: (theme) => theme.palette.secondary.main
+                  }}
                 >
                   {event.name}
                 </Typography>
@@ -61,7 +64,7 @@ export const EventCard = ({ event }: EventCardProps) => {
             >
               <Box
                 className="content"
-                gap={1}
+                gap={2}
                 sx={{
                   position: "absolute",
                   bottom: 8,
@@ -72,15 +75,17 @@ export const EventCard = ({ event }: EventCardProps) => {
                 }}
               >
                 {event.ticketLink && (
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    onClick={() => window.open(event.ticketLink, "_blank")}
-                  >
-                    {siteInfo.events.eventCardButtonText}
-                  </Button>
+                  <Box>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      onClick={() => window.open(event.ticketLink, "_blank")}
+                    >
+                      {siteInfo.events.eventCardButtonText}
+                    </Button>
+                  </Box>
                 )}
-                <Box display="flex" flexDirection="column">
+                <Box display="flex" flexDirection="column" width="50%">
                   <Typography>{event.location}</Typography>
                   <Typography>{toLocaleDateTime(event.date)}</Typography>
                 </Box>
