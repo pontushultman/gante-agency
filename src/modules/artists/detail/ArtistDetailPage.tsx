@@ -1,8 +1,9 @@
 import { Box, Typography } from "@mui/material"
 import { useParams } from "react-router-dom"
-import { HomeNavigationButton } from "../../../components/button/HomeNavigationButton"
+import { BackNavigationButton } from "../../../components/button/BackNavigationButton"
 import { GuiChip } from "../../../components/chip/GuiChip"
 import { ConnectSection } from "../../../components/connect/ConnectSection"
+import { routePrefix } from "../../../components/const"
 import { DetailPageImageSlideShow } from "../../../components/detail-page/DetailPageImageSlideShow"
 import { DetailPageTitle } from "../../../components/detail-page/DetailPageTitle"
 import { DetailPageWrapper } from "../../../components/detail-page/DetailPageWrapper"
@@ -10,9 +11,7 @@ import { FullScreenBackground } from "../../../components/FullScreenBackground"
 import { urlFor } from "../../../sanity/image"
 import { ArtistModel } from "../../../sanity/sanityClient"
 import { useArtistByIdQuery } from "../../../sanity/useClient"
-import { useNavigationContext } from "../../../setup/NavigationProvider"
-import { homePath } from "../../home/HomeRoute"
-import { routePrefix } from "../../../components/const"
+import { artistsPath } from "../ArtistsRoute"
 
 export const artistDetailPath = `${routePrefix}artists/:id`
 
@@ -26,8 +25,6 @@ const hasSocialLink = (artist: ArtistModel) => {
 }
 
 export const ArtistDetailPage = () => {
-  const navigate = useNavigationContext()
-
   const id = useParams<{ id: string }>().id
 
   const { data } = useArtistByIdQuery(id)
@@ -44,8 +41,10 @@ export const ArtistDetailPage = () => {
       }}
     >
       <FullScreenBackground backgroundImage={imageUrl}>
-        <HomeNavigationButton
-          onBackNavigation={() => navigate.navigateTo(homePath)}
+        <BackNavigationButton
+          onBackNavigationProps={{
+            path: artistsPath
+          }}
         />
 
         <DetailPageWrapper>

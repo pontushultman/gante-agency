@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { UnionPath } from "../modules/Routes"
 
-type NavigationContextProps = {
+export type NavigationContextProps = {
   navigateTo: (path: UnionPath, params?: Record<string, string>) => void
   currentPath: string
 }

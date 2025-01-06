@@ -1,7 +1,8 @@
 import { Box, Typography } from "@mui/material"
-import { HomeNavigationButton } from "../button/HomeNavigationButton"
-import { CaptionTypography } from "../typography/CaptionTypography"
 import { ReactNode } from "react"
+import { homePath } from "../../modules/home/HomeRoute"
+import { BackNavigationButton } from "../button/BackNavigationButton"
+import { CaptionTypography } from "../typography/CaptionTypography"
 
 type PageTopSectionProps = {
   title: string
@@ -18,7 +19,13 @@ export const PageTopSection = ({
 }: PageTopSectionProps) => {
   return (
     <>
-      {!disableBacknavigation && <HomeNavigationButton />}
+      {!disableBacknavigation && (
+        <BackNavigationButton
+          onBackNavigationProps={{
+            path: homePath
+          }}
+        />
+      )}
 
       <Box
         sx={{
@@ -28,7 +35,7 @@ export const PageTopSection = ({
           textAlign: "center",
           fontFamily: "Arial, sans-serif",
           overflow: "hidden",
-          paddingTop: 2
+          paddingTop: 4
         }}
       >
         <Box>
