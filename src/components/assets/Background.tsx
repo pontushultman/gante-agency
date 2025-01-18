@@ -12,7 +12,6 @@ const StyledBackgroundImage = styled.div`
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 1.5em;
   text-transform: uppercase;
-  height: 100vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
 `
 export const Background = ({ children }: BackgroundProps) => {
