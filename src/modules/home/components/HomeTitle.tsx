@@ -30,7 +30,6 @@ type StyledTypographyProps = {
 export const StyledTypography = styled(Typography)<StyledTypographyProps>(
   ({ theme, fontSize }) => ({
     fontSize,
-    fontFamily: '"Avenir Next Heavy"',
     color: "#fff",
     lineHeight: "1em",
     letterSpacing: "-0.05em",

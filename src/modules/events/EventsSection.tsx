@@ -14,8 +14,6 @@ export const EventsSection = () => {
     return getUpcomingAndPastEvents(data)
   }, [data])
 
-  console.log(pastEvents)
-
   if (isLoading) return null
 
   if (data?.length === 0)

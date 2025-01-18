@@ -93,7 +93,6 @@ export const Paragraphs = ({ paragraphs }: ParagraphsProps) => {
       {paragraphs.map((paragraph, index) => (
         <Typography
           color="#bbbbbb"
-          fontFamily="Avenir Next Regular"
           fontSize="1.25rem"
           lineHeight="1.5em"
           textTransform="none"
