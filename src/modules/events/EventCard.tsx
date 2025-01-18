@@ -39,10 +39,10 @@ export const EventCard = ({ event }: EventCardProps) => {
                 }}
               >
                 <Typography
-                  variant="h5"
+                  variant="h4"
                   sx={{
                     fontWeight: "bold",
-                    color: (theme) => theme.palette.secondary.main
+                    color: "#fff"
                   }}
                 >
                   {event.name}

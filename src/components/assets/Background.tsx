@@ -1,15 +1,28 @@
 import { ReactNode } from "react"
+import styled from "styled-components"
 import backgroundImg from "./background.png"
-import { FullScreenBackground } from "../FullScreenBackground"
-
 type BackgroundProps = {
   children: ReactNode
 }
 
+const StyledBackgroundImage = styled.div`
+  background-size: auto; /* Change to 'cover' if you want it stretched */
+  background-repeat: repeat;
+  background-position: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+`
 export const Background = ({ children }: BackgroundProps) => {
   return (
-    <FullScreenBackground backgroundImage={backgroundImg}>
+    <StyledBackgroundImage
+      style={{
+        backgroundImage: `url(${backgroundImg})`
+      }}
+    >
       {children}
-    </FullScreenBackground>
+    </StyledBackgroundImage>
   )
 }
