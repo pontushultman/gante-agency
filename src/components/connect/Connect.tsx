@@ -1,4 +1,11 @@
-import { Facebook, Instagram, Mail, Map, YouTube } from "@mui/icons-material"
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  Map,
+  PinDrop,
+  YouTube
+} from "@mui/icons-material"
 import { Grid } from "@mui/material"
 import { GuiIconButton } from "../button/GuiIconButton"
 import Spotify from "../assets/Spotify"
@@ -28,7 +35,7 @@ const socialLinks: { icon: React.ElementType; urlKey: SocialLinkKey }[] = [
   { icon: YouTube, urlKey: "youtubeUrl" },
   { icon: Instagram, urlKey: "instagramUrl" },
   { icon: Spotify, urlKey: "spotifyUrl" },
-  { icon: Map, urlKey: "mapUrl" },
+  { icon: PinDrop, urlKey: "mapUrl" },
   { icon: Mail, urlKey: "mailUrl" }
 ]
 
