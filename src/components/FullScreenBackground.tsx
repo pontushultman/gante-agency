@@ -14,16 +14,19 @@ const StyledBackgroundImage = styled.div`
 
 type FullScreenBackgroundProps = {
   backgroundImage?: string
+  style?: React.CSSProperties
   children: React.ReactNode
 }
 
 export const FullScreenBackground = ({
   backgroundImage = backgroundImg,
+  style,
   children
 }: FullScreenBackgroundProps) => {
   return (
     <StyledBackgroundImage
       style={{
+        ...style,
         backgroundImage: `url(${backgroundImage})`
       }}
     >

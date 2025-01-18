@@ -24,7 +24,7 @@ export const PageTopSection = ({
   )
 
   return (
-    <Box pt={isMobileDevice ? 10 : 0}>
+    <Box pt={isMobileDevice ? 10 : 0} pb={2}>
       {!disableBacknavigation && (
         <BackNavigationButton
           onBackNavigationProps={{
@@ -36,8 +36,7 @@ export const PageTopSection = ({
       <Box
         sx={{
           position: "relative",
-          backgroundColor: "#000",
-          color: "#fff",
+
           textAlign: "center",
           fontFamily: "Arial, sans-serif",
           overflow: "hidden",

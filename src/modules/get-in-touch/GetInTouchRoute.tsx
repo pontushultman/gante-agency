@@ -4,6 +4,7 @@ import { GuiLink } from "../../components/link/GuiLink"
 import PageTopSection from "../../components/page/PageTopSection"
 import { ManagementSection } from "./ManagementSection"
 import { siteInfo } from "../../const"
+import { Background } from "../../components/assets/Background"
 
 export const getInTouchPath = "/get-in-touch"
 
@@ -11,7 +12,7 @@ export const GetInTouchRoute = () => {
   const href = `mailto:${siteInfo.contact.mail}`
 
   return (
-    <>
+    <Background>
       <PageTopSection
         subtitle={siteInfo.getInTouch.subtitle}
         title={siteInfo.getInTouch.title}
@@ -38,6 +39,6 @@ export const GetInTouchRoute = () => {
       />
 
       <ManagementSection />
-    </>
+    </Background>
   )
 }

@@ -9,7 +9,7 @@ type GuiSectionProps<T> = {
 
 export function GuiSection<T>({ items, renderItem }: GuiSectionProps<T>) {
   return (
-    <Box display="flex" width="100%" sx={{ backgroundColor: "black" }}>
+    <Box display="flex" width="100%">
       <Box
         sx={{ padding: 4 }}
         width="100%"
