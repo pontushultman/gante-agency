@@ -17,8 +17,8 @@ export const siteInfo = {
     },
     artists: {
         title: "DJS & ARTISTER",
-        subtitle: "",
-        description: "Boka våra artister till ditt event",
+        subtitle: "Boka våra artister till ditt event",
+        description: "",
     },
     artist: {
         subtitle: "",
