@@ -2,6 +2,7 @@ import { useMemo } from "react"
 import { GuiSection } from "../../../components/section/GuiSection"
 import { useArtistsQuery } from "../../../sanity/useClient"
 import ArtistCard, { SlimArtist } from "./ArtistCard"
+import { Box } from "@mui/material"
 
 const ArtistsSection = () => {
   const { data, isLoading } = useArtistsQuery()
@@ -24,10 +25,12 @@ const ArtistsSection = () => {
   if (isLoading) return null
 
   return (
-    <GuiSection<SlimArtist>
-      items={mappedData}
-      renderItem={(item) => <ArtistCard artist={item} />}
-    />
+    <Box minHeight="100vh">
+      <GuiSection<SlimArtist>
+        items={mappedData}
+        renderItem={(item) => <ArtistCard artist={item} />}
+      />
+    </Box>
   )
 }
 

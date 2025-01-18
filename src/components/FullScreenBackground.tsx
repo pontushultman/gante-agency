@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import backgroundImg from "./pexels-marc-schulte-656598-2952834.jpg"
+import backgroundImg from "./gante.jpeg"
 
 const StyledBackgroundImage = styled.div`
   background-size: cover;
