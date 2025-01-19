@@ -1,7 +1,7 @@
 {
   "name": "gante-agency",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://www.ganteagency.com/#",
   "dependencies": {
     "@emotion/react": "^11.13.3",
