@@ -5,7 +5,7 @@ import { MenuPage } from "../menu/MenuPage"
 import { HomeTitle } from "./components/HomeTitle"
 import { HomeBackground } from "./HomeBackground"
 
-export const homePath = `*`
+export const homePath = `/`
 
 export const HomeRoute = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
