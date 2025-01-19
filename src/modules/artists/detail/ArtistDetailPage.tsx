@@ -13,6 +13,7 @@ import { urlFor } from "../../../sanity/image"
 import { ArtistModel } from "../../../sanity/sanityClient"
 import { useArtistByIdQuery } from "../../../sanity/useClient"
 import { artistsPath } from "../ArtistsRoute"
+import { useIsSmallDevice } from "../../../hooks/useIsSmallDevice"
 
 export const artistDetailPath = `${routePrefix}artists/:id`
 
@@ -49,7 +50,7 @@ export const ArtistDetailPage = () => {
         />
 
         <DetailPageWrapper>
-          <Box display="flex" flexDirection="column" gap={2}>
+          <Box display="flex" flexDirection="column" gap={2} pt={2}>
             <Box display="flex" flexDirection="row" alignItems="center">
               <DetailPageTitle
                 subTitle={siteInfo.artist.subtitle}
@@ -86,6 +87,8 @@ type ParagraphsProps = {
 }
 
 export const Paragraphs = ({ paragraphs }: ParagraphsProps) => {
+  const isSmallDevice = useIsSmallDevice()
+
   if (!paragraphs) return null
 
   return (
@@ -93,7 +96,7 @@ export const Paragraphs = ({ paragraphs }: ParagraphsProps) => {
       {paragraphs.map((paragraph, index) => (
         <Typography
           color="#bbbbbb"
-          fontSize="1.25rem"
+          fontSize={!isSmallDevice ? "1.25rem" : "0.85rem"}
           lineHeight="1.5em"
           textTransform="none"
           key={index}

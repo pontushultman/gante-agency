@@ -4,6 +4,7 @@ import { Connect } from "../../../components/connect/Connect"
 import { SubTitle } from "../../../components/typography/SubTitle"
 import { siteInfo } from "../../../const"
 import { FooterText } from "../../footer/Footer"
+import { useIsSmallDevice } from "../../../hooks/useIsSmallDevice"
 
 const glitchAnim = keyframes`
   0% {
@@ -44,6 +45,7 @@ export const StyledTypography = styled(Typography)<StyledTypographyProps>(
 )
 
 export const HomeTitle = () => {
+  const isSmallDevice = useIsSmallDevice()
   return (
     <Box
       display="flex"
@@ -63,8 +65,10 @@ export const HomeTitle = () => {
       >
         {siteInfo.home.welcome}
       </SubTitle>
-      <StyledTypography
-        fontSize="5rem"
+      <Typography
+        marginY={-2}
+        fontSize={isSmallDevice ? "3.5rem" : "5rem"}
+        fontWeight="bold"
         sx={{
           textStroke: "2px gray",
           "-webkit-text-stroke": "2px gray",
@@ -72,7 +76,7 @@ export const HomeTitle = () => {
         }}
       >
         Gante Agency
-      </StyledTypography>
+      </Typography>
       <Box pt={1}>
         <Connect
           facebookUrl={siteInfo.contact.facebook}

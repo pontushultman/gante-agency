@@ -4,15 +4,19 @@ import { EventsModel } from "../../sanity/sanityClient"
 import { useEventsQuery } from "../../sanity/useClient"
 import { EventCard } from "./EventCard"
 import { useMemo } from "react"
+import { useIsSmallDevice } from "../../hooks/useIsSmallDevice"
 
 export const EventsSection = () => {
   const { data, isLoading } = useEventsQuery()
+  const isSmallDevice = useIsSmallDevice()
 
-  const { upcomingEvents, pastEvents } = useMemo(() => {
+  const { upcomingEvents } = useMemo(() => {
     if (!data) return { upcomingEvents: [], pastEvents: [] }
 
     return getUpcomingAndPastEvents(data)
   }, [data])
+
+  const variant = isSmallDevice ? "h5" : "h4"
 
   if (isLoading) return null
 
@@ -25,27 +29,18 @@ export const EventsSection = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="h4">Currently there are no events</Typography>
+        <Typography variant={variant}>Currently there are no events</Typography>
       </Box>
     )
 
   return (
-    <Box>
+    <Box height="100vh">
       <Box>
-        <Typography pl={4} textTransform="none" variant="h4">
+        <Typography pl={4} textTransform="none" variant={variant}>
           Kommande events
         </Typography>
         <GuiSection<EventsModel>
           items={upcomingEvents || []}
-          renderItem={(item) => <EventCard event={item} />}
-        />
-      </Box>
-      <Box>
-        <Typography pl={4} variant="h4" textTransform="none">
-          Tidigare events
-        </Typography>
-        <GuiSection<EventsModel>
-          items={pastEvents || []}
           renderItem={(item) => <EventCard event={item} />}
         />
       </Box>

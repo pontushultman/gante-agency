@@ -13,6 +13,10 @@ export const ManagementSection = () => {
   return (
     <GuiSection<Management>
       items={data || []}
+      xs={12}
+      lg={12}
+      md={12}
+      sm={12}
       renderItem={(item) => <ManagementCard management={item} />}
     />
   )

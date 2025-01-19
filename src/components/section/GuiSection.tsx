@@ -5,9 +5,20 @@ import { motion } from "framer-motion"
 type GuiSectionProps<T> = {
   items: T[]
   renderItem: (item: T) => React.ReactNode
+  xs?: number
+  sm?: number
+  md?: number
+  lg?: number
 }
 
-export function GuiSection<T>({ items, renderItem }: GuiSectionProps<T>) {
+export function GuiSection<T>({
+  items,
+  renderItem,
+  xs = 12,
+  sm = 6,
+  md = 4,
+  lg = 3
+}: GuiSectionProps<T>) {
   return (
     <Box display="flex" width="100%">
       <Box
@@ -21,10 +32,10 @@ export function GuiSection<T>({ items, renderItem }: GuiSectionProps<T>) {
           {items.map((item, index) => (
             <AnimationGrid
               item
-              xs={12}
-              sm={6}
-              md={4}
-              lg={3}
+              xs={xs}
+              sm={sm}
+              md={md}
+              lg={lg}
               key={index}
               component={motion.div}
               initial={{ opacity: 0, y: 50 }}

@@ -4,12 +4,15 @@ import { urlFor } from "../../sanity/image"
 import { EventsModel } from "../../sanity/sanityClient"
 import { toLocaleDateTime } from "../../utils/dateUtils"
 import { siteInfo } from "../../const"
+import { useIsSmallDevice } from "../../hooks/useIsSmallDevice"
 
 type EventCardProps = {
   event: EventsModel
 }
 
 export const EventCard = ({ event }: EventCardProps) => {
+  const isSmallDevice = useIsSmallDevice()
+
   const imageUrl = event.image
     ? urlFor(event.image).width(400).height(400).url()
     : null
@@ -39,7 +42,7 @@ export const EventCard = ({ event }: EventCardProps) => {
                 }}
               >
                 <Typography
-                  variant="h4"
+                  variant={isSmallDevice ? "h5" : "h4"}
                   sx={{
                     fontWeight: "bold",
                     color: "#fff"
