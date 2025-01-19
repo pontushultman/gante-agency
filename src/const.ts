@@ -33,6 +33,6 @@ export const siteInfo = {
         title: "Ganté Agency",
         subtitle: "Evenemang",
         description: "",
-        eventCardButtonText: "Köp biljett",
+        eventCardButtonText: "Till event",
     }
 }
