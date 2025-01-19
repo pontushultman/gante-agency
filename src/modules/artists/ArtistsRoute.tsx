@@ -4,8 +4,6 @@ import PageTopSection from "../../components/page/PageTopSection"
 import { siteInfo } from "../../const"
 import ArtistsSection from "./components/ArtistsSection"
 
-import { Background } from "../../components/assets/Background"
-
 export const artistsPath = `${routePrefix}artists`
 
 type ArtistsProps = {
@@ -14,7 +12,7 @@ type ArtistsProps = {
 
 export const Artists = ({ disableBacknavigation }: ArtistsProps) => {
   return (
-    <Background>
+    <>
       <PageTopSection
         description={siteInfo.artists.description}
         subtitle={siteInfo.artists.subtitle}
@@ -23,7 +21,7 @@ export const Artists = ({ disableBacknavigation }: ArtistsProps) => {
       />
 
       <ArtistsSection />
-    </Background>
+    </>
   )
 }
 
