@@ -41,7 +41,7 @@ export const FooterText = ({ sx }: FooterProps) => {
         alignItems="center"
         justifyContent="center"
       >
-        <CaptionTypography>COPYRIGHT 2025 | GANTE AGENCY</CaptionTypography>
+        <CaptionTypography>COPYRIGHT 2025 | GANTÈ AGENCY</CaptionTypography>
       </Box>
     </Box>
   )

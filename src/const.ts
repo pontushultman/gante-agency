@@ -1,7 +1,7 @@
 export const siteInfo = {
     home: {
         welcome: "Välkommen till",
-        agency: "Gante Agency",
+        agency: "Ganté Agency",
     },
     contact: {
         facebook: "https://www.facebook.com/gabriel.hammarsten",
@@ -26,11 +26,11 @@ export const siteInfo = {
     },
     getInTouch: {
         subtitle: "Kontakta oss",
-        title: "Gante Agency",
+        title: "Ganté Agency",
         buttonText: "Kontakta oss",
     },
     events: {
-        title: "Gante Agency",
+        title: "Ganté Agency",
         subtitle: "Evenemang",
         description: "",
         eventCardButtonText: "Köp biljett",
