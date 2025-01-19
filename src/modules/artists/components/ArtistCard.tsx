@@ -33,7 +33,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
       onClick={handleClick}
       renderItem={(artist) => {
         return (
-          <Box paddingBottom={"50px"}>
+          <Box paddingBottom={"35px"}>
             <Box
               display="flex"
               flexDirection="column"
