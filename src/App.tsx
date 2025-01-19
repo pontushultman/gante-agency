@@ -25,10 +25,7 @@ export default App
 
 export const GetInTouchButtoFixedButton = () => {
   const { navigateTo } = useNavigationContext()
-  const theme = useTheme()
-  const isSmallMobile = useMediaQuery(
-    theme.breakpoints.down("sm") || theme.breakpoints.down("xs")
-  )
+  const below830px = useMediaQuery("(max-width: 830px)")
 
   const hidden = window.location.pathname === "/get-in-touch"
 
@@ -40,7 +37,7 @@ export const GetInTouchButtoFixedButton = () => {
       onClick={() => navigateTo("/get-in-touch")}
     >
       <Box display="flex" flexDirection="row" alignItems="center" gap={1}>
-        {!isSmallMobile && (
+        {!below830px && (
           <Typography fontSize={20} fontWeight="bold">
             {siteInfo.getInTouch.buttonText}
           </Typography>

@@ -34,7 +34,7 @@ export const EventsSection = () => {
     )
 
   return (
-    <Box height="100vh">
+    <Box minHeight="100vh">
       <Box>
         <Typography pl={4} textTransform="none" variant={variant}>
           Kommande events
