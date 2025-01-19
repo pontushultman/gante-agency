@@ -59,10 +59,6 @@ export const HomeTitle = () => {
           maxWidth: "400px",
           height: "auto",
           marginY: -2,
-          "--time-anim": "8s", // Total duration (includes 4s pause)
-          "--delay-anim": "0s",
-          animation: `${glitchAnim} var(--time-anim) linear infinite`,
-          animationDelay: "calc(var(--delay-anim) + var(--time-anim) * 0.2)"
         }}
       />
       <Box pt={1}>
