@@ -2,7 +2,7 @@
   "name": "gante-agency",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://pontushultman.github.io/gante-agency",
+  "homepage": "www.ganteagency.com",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
