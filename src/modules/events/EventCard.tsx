@@ -16,54 +16,49 @@ export const EventCard = ({ event }: EventCardProps) => {
     : null
 
   return (
-    <GuiSectionImage
-      imageUrl={imageUrl}
-      item={event}
-      renderItem={(event) => {
-        return (
-          <Box display="flex" flexDirection="column" paddingBottom={"110px"}>
+    <Box>
+      <GuiSectionImage
+        imageUrl={imageUrl}
+        item={event}
+        renderItem={(event) => {
+          return (
             <Box
-              display="flex"
-              flexDirection="column"
-              height="auto"
-              width="100%"
-              padding={2}
               sx={{
-                backgroundColor: "transparent",
                 position: "absolute",
-                bottom: 0
+                bottom: 20,
+                left: 16
               }}
             >
-              <CardTypography>{event.name}</CardTypography>
-
-              <Box
-                gap={2}
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  alignItems: "center"
-                }}
-              >
-                {event.ticketLink && (
-                  <Box>
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                      onClick={() => window.open(event.ticketLink, "_blank")}
-                    >
-                      {siteInfo.events.eventCardButtonText}
-                    </Button>
-                  </Box>
-                )}
-                <Box display="flex" flexDirection="column" width="50%">
-                  <Typography>{event.location}</Typography>
-                  <Typography>{toLocaleDateTime(event.date)}</Typography>
+              {event.ticketLink && (
+                <Box>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => window.open(event.ticketLink, "_blank")}
+                  >
+                    {siteInfo.events.eventCardButtonText}
+                  </Button>
                 </Box>
-              </Box>
+              )}
             </Box>
+          )
+        }}
+      />
+      <Box display="flex" flex={1} flexDirection="column" gap={1} pl={2}>
+        <CardTypography>{event.name}</CardTypography>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center"
+          }}
+        >
+          <Box display="flex" flexDirection="column" width="100%">
+            <Typography>{event.location}</Typography>
+            <Typography>{toLocaleDateTime(event.date)}</Typography>
           </Box>
-        )
-      }}
-    />
+        </Box>
+      </Box>
+    </Box>
   )
 }
