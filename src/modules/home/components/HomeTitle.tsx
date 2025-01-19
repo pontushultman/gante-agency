@@ -70,8 +70,8 @@ export const HomeTitle = () => {
         fontSize={isSmallDevice ? "3.5rem" : "5rem"}
         fontWeight="bold"
         sx={{
-          textStroke: "2px gray",
-          "-webkit-text-stroke": "2px gray",
+          textStroke: "1px gray",
+          "-webkit-text-stroke": "1px gray",
           textShadow: "10px 10px 12px rgba(0, 0, 0, 0.5)"
         }}
       >

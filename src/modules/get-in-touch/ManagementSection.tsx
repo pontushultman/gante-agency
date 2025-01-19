@@ -8,11 +8,19 @@ import { CaptionTypography } from "../../components/typography/CaptionTypography
 export const ManagementSection = () => {
   const { data, isLoading } = useManagementQuery()
 
+  const sortByGabrielFirst = (a: Management, b: Management) => {
+    if (a.name?.includes("Gabriel")) return -1
+    if (b.name?.includes("Gabriel")) return 1
+    return 0
+  }
+
+  const sortedData = data?.sort(sortByGabrielFirst)
+
   if (isLoading) return null
 
   return (
     <GuiSection<Management>
-      items={data || []}
+      items={sortedData || []}
       xs={12}
       lg={12}
       md={12}
