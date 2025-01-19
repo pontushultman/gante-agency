@@ -3,14 +3,15 @@ import styled from "styled-components"
 import backgroundImg from "./gante-home.jpeg"
 
 const StyledBackgroundImage = styled.div`
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1.5em;
-  text-transform: uppercase;
+  background-size: cover;
   height: 100vh;
-  width: 100%;
+
+  @media (max-width: 768px) {
+    background-size: auto 100%;
+    background-position: 45% 20%;
+  }
 `
 
 type HomeBackgroundProps = {

@@ -1,9 +1,10 @@
-import { Box, Chip, Typography } from "@mui/material"
+import { Box, Chip } from "@mui/material"
 import React from "react"
+import { CardTypography } from "../../../components/detail-page/CardTypography"
+import { GuiSectionImage } from "../../../components/section/GuiSectionImage"
 import { Artists, MusicFormat } from "../../../sanity/generated-schema-types"
 import { urlFor } from "../../../sanity/image"
 import { useNavigationContext } from "../../../setup/NavigationProvider"
-import { GuiSectionImage } from "../../../components/section/GuiSectionImage"
 import { artistDetailPath } from "../detail/ArtistDetailPage"
 
 export type SlimArtist = Pick<Artists, "name" | "_id" | "image"> & {
@@ -32,43 +33,40 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
       onClick={handleClick}
       renderItem={(artist) => {
         return (
-          <Box
-            className="content"
-            sx={{
-              position: "absolute",
-              bottom: 16,
-              left: 16,
-              color: "#fff"
-            }}
-          >
+          <Box paddingBottom={"50px"}>
             <Box
+              display="flex"
+              flexDirection="column"
+              rowGap={3}
               sx={{
-                display: "flex",
-                gap: 1,
-                flexWrap: "wrap",
-                marginBottom: 1
+                position: "absolute",
+                bottom: 0,
+                left: 16
               }}
             >
-              {artist.musicFormat?.map((label) => (
-                <Chip
-                  key={label.musicFormat}
-                  label={label.musicFormat}
-                  sx={{
-                    backgroundColor: (theme) => theme.palette.secondary.main,
-                    color: "#fff",
-                    fontSize: 12,
-                    fontWeight: "bold",
-                    textTransform: "uppercase"
-                  }}
-                />
-              ))}
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 1,
+                  flexWrap: "wrap"
+                }}
+              >
+                {artist.musicFormat?.map((label) => (
+                  <Chip
+                    key={label.musicFormat}
+                    label={label.musicFormat}
+                    sx={{
+                      backgroundColor: (theme) => theme.palette.secondary.main,
+                      color: "#fff",
+                      fontSize: 12,
+                      fontWeight: "bold",
+                      textTransform: "uppercase"
+                    }}
+                  />
+                ))}
+              </Box>
+              <CardTypography>{artist.name}</CardTypography>
             </Box>
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: "bold", color: "white" }}
-            >
-              {artist.name}
-            </Typography>
           </Box>
         )
       }}

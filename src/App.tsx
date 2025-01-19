@@ -1,11 +1,11 @@
 import { People } from "@mui/icons-material"
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material"
+import { Box, Typography, useMediaQuery } from "@mui/material"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { AppNavigation } from "./AppNavigation"
 import { GuiButton } from "./components/button/GuiButton"
+import { siteInfo } from "./const"
 import { useNavigationContext } from "./setup/NavigationProvider"
 import { GuiThemeProvider } from "./setup/ThemeProvider"
-import { siteInfo } from "./const"
 
 const queryClient = new QueryClient()
 

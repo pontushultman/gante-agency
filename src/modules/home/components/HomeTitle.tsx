@@ -59,7 +59,8 @@ export const HomeTitle = () => {
       <SubTitle
         sx={{
           color: colors.primary,
-          textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)"
+          textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)",
+          textTransform: "uppercase"
         }}
         fontSize="1.5rem"
       >
@@ -69,6 +70,7 @@ export const HomeTitle = () => {
         marginY={-2}
         fontSize={isSmallDevice ? "3.5rem" : "5rem"}
         fontWeight="bold"
+        textTransform="uppercase"
         sx={{
           textStroke: "1px gray",
           "-webkit-text-stroke": "1px gray",

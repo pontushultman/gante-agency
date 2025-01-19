@@ -29,20 +29,21 @@ export const GuiThemeProvider = ({
         fontFamily: "'Fira Sans', 'Helvetica', 'Arial', sans-serif",
         h1: {
           fontWeight: 700,
-          fontSize: "3rem" // Adjust as needed
+          fontSize: "4.5rem" // Adjust as needed
         },
         h2: {
           fontWeight: 600,
-          fontSize: "2.5rem"
+          fontSize: "3.5rem"
         },
         h3: {
           fontWeight: 600,
-          fontSize: "3.5rem"
+          fontSize: "3rem"
         },
         h4: {
           fontWeight: 600,
-          fontSize: "4rem"
+          fontSize: "2.5rem"
         },
+
         body1: {
           fontWeight: 400,
           fontSize: "1rem"

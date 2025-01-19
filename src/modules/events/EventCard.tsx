@@ -1,18 +1,16 @@
 import { Box, Button, Typography } from "@mui/material"
+import { CardTypography } from "../../components/detail-page/CardTypography"
 import { GuiSectionImage } from "../../components/section/GuiSectionImage"
+import { siteInfo } from "../../const"
 import { urlFor } from "../../sanity/image"
 import { EventsModel } from "../../sanity/sanityClient"
 import { toLocaleDateTime } from "../../utils/dateUtils"
-import { siteInfo } from "../../const"
-import { useIsSmallDevice } from "../../hooks/useIsSmallDevice"
 
 type EventCardProps = {
   event: EventsModel
 }
 
 export const EventCard = ({ event }: EventCardProps) => {
-  const isSmallDevice = useIsSmallDevice()
-
   const imageUrl = event.image
     ? urlFor(event.image).width(400).height(400).url()
     : null
@@ -23,56 +21,25 @@ export const EventCard = ({ event }: EventCardProps) => {
       item={event}
       renderItem={(event) => {
         return (
-          <>
-            <Box
-              className="content"
-              sx={{
-                position: "absolute",
-                bottom: 60,
-                left: 16,
-                color: "#fff"
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: 1,
-                  flexWrap: "wrap",
-                  marginBottom: 1
-                }}
-              >
-                <Typography
-                  variant={isSmallDevice ? "h5" : "h4"}
-                  sx={{
-                    fontWeight: "bold",
-                    color: "#fff"
-                  }}
-                >
-                  {event.name}
-                </Typography>
-              </Box>
-            </Box>
+          <Box display="flex" flexDirection="column" paddingBottom={"110px"}>
             <Box
               display="flex"
-              flexDirection="row"
-              height="30px"
+              flexDirection="column"
+              height="auto"
               width="100%"
               padding={2}
-              alignItems="center"
               sx={{
-                backgroundColor: "gray",
+                backgroundColor: "transparent",
                 position: "absolute",
                 bottom: 0
               }}
             >
+              <CardTypography>{event.name}</CardTypography>
+
               <Box
-                className="content"
                 gap={2}
                 sx={{
-                  position: "absolute",
-                  bottom: 8,
                   width: "100%",
-                  color: "#fff",
                   display: "flex",
                   alignItems: "center"
                 }}
@@ -94,7 +61,7 @@ export const EventCard = ({ event }: EventCardProps) => {
                 </Box>
               </Box>
             </Box>
-          </>
+          </Box>
         )
       }}
     />
