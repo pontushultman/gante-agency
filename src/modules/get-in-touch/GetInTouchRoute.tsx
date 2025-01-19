@@ -13,7 +13,7 @@ export const GetInTouchRoute = () => {
 
   return (
     <Background>
-      <Box height="100%">
+      <Box minHeight="100vh">
         <PageTopSection
           subtitle={siteInfo.getInTouch.subtitle}
           title={siteInfo.getInTouch.title}
