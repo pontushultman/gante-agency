@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { HashRouter, Route, Routes } from "react-router-dom"
 import { GetInTouchButtoFixedButton } from "./App"
 import { Footer } from "./modules/footer/Footer"
 import { routes } from "./modules/Routes"
@@ -6,7 +6,7 @@ import { NavigationProvider } from "./setup/NavigationProvider"
 
 export const AppNavigation = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <NavigationProvider>
         <GetInTouchButtoFixedButton />
         <Routes>
@@ -16,6 +16,6 @@ export const AppNavigation = () => {
         </Routes>
         <Footer />
       </NavigationProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
