@@ -2,6 +2,7 @@ import { Box, keyframes, styled, Typography } from "@mui/material"
 import { SubTitle } from "../../../components/typography/SubTitle"
 import { Connect } from "../../../components/connect/Connect"
 import { siteInfo } from "../../../const"
+import { Logo } from "../../../components/assets/Logo"
 
 const glitchAnim = keyframes`
   0% {
@@ -53,9 +54,13 @@ export const HomeTitle = () => {
       width="100%"
     >
       <SubTitle fontSize="1.5rem">{siteInfo.home.welcome}</SubTitle>
-      <StyledTypography fontSize="5rem">
-        {siteInfo.home.agency}
-      </StyledTypography>
+      <Logo
+        sx={{
+          maxWidth: "400px",
+          height: "auto",
+          marginY: -2
+        }}
+      />
       <Box pt={1}>
         <Connect
           facebookUrl={siteInfo.contact.facebook}
