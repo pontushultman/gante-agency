@@ -6,6 +6,7 @@ import HamburgerMenu from "../menu/HamburgerMenu"
 import { MenuPage } from "../menu/MenuPage"
 import { HomeTitle } from "./components/HomeTitle"
 import { routePrefix } from "../../components/const"
+import { HomeBackground } from "./HomeBackground"
 
 export const homePath = `${routePrefix}`
 
@@ -22,10 +23,9 @@ export const HomeRoute = () => {
       <>
         {!isMenuOpen ? (
           <>
-            <FullScreenBackground>
+            <HomeBackground>
               <HomeTitle />
-              <Footer />
-            </FullScreenBackground>
+            </HomeBackground>
           </>
         ) : (
           <MenuPage onHomeClick={() => setIsMenuOpen(false)} />

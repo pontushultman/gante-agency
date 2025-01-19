@@ -13,6 +13,7 @@ import { ArtistModel } from "../../../sanity/sanityClient"
 import { useArtistByIdQuery } from "../../../sanity/useClient"
 import { artistsPath } from "../ArtistsRoute"
 import { siteInfo } from "../../../const"
+import { colors } from "../../../components/colors"
 
 export const artistDetailPath = `${routePrefix}artists/:id`
 
@@ -97,6 +98,10 @@ export const Paragraphs = ({ paragraphs }: ParagraphsProps) => {
           lineHeight="1.5em"
           textTransform="none"
           key={index}
+          sx={{
+            color: "#fff",
+            textShadow: "6px 6px 10px rgba(0, 0, 0, 0.5)"
+          }}
         >
           {paragraph}
         </Typography>

@@ -1,7 +1,11 @@
-import { Box } from "@mui/material"
+import { Box, SxProps, Theme } from "@mui/material"
 import { CaptionTypography } from "../../components/typography/CaptionTypography"
 
-export const Footer = () => {
+type FooterProps = {
+  sx?: SxProps<Theme>
+}
+
+export const Footer = ({ sx }: FooterProps) => {
   return (
     <Box
       display="flex"
@@ -13,6 +17,7 @@ export const Footer = () => {
       margin="0 auto"
       height={"5%"}
       rowGap={2}
+      sx={sx}
     >
       <Box
         display="flex"

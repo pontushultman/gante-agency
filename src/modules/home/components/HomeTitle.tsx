@@ -1,8 +1,9 @@
 import { Box, keyframes, styled, Typography } from "@mui/material"
-import { SubTitle } from "../../../components/typography/SubTitle"
+import { colors } from "../../../components/colors"
 import { Connect } from "../../../components/connect/Connect"
+import { SubTitle } from "../../../components/typography/SubTitle"
 import { siteInfo } from "../../../const"
-import { Logo } from "../../../components/assets/Logo"
+import { Footer } from "../../footer/Footer"
 
 const glitchAnim = keyframes`
   0% {
@@ -29,9 +30,9 @@ type StyledTypographyProps = {
 }
 
 export const StyledTypography = styled(Typography)<StyledTypographyProps>(
-  ({ theme, fontSize }) => ({
+  ({ theme, fontSize, color }) => ({
     fontSize,
-    color: "#fff",
+    color: color || "#fff",
     lineHeight: "1em",
     letterSpacing: "-0.05em",
     textTransform: "uppercase",
@@ -50,17 +51,28 @@ export const HomeTitle = () => {
       justifyContent="center"
       alignItems="center"
       textAlign="center"
-      height="91%"
+      height="100%"
       width="100%"
     >
-      <SubTitle fontSize="1.5rem">{siteInfo.home.welcome}</SubTitle>
-      <Logo
+      <SubTitle
         sx={{
-          maxWidth: "400px",
-          height: "auto",
-          marginY: -2,
+          color: colors.primary,
+          textShadow: "2px 2px 6px rgba(0, 0, 0, 0.5)"
         }}
-      />
+        fontSize="1.5rem"
+      >
+        {siteInfo.home.welcome}
+      </SubTitle>
+      <StyledTypography
+        fontSize="5rem"
+        sx={{
+          textStroke: "2px gray",
+          "-webkit-text-stroke": "2px gray",
+          textShadow: "10px 10px 12px rgba(0, 0, 0, 0.5)"
+        }}
+      >
+        Gante Agency
+      </StyledTypography>
       <Box pt={1}>
         <Connect
           facebookUrl={siteInfo.contact.facebook}
@@ -69,6 +81,12 @@ export const HomeTitle = () => {
           mailUrl={siteInfo.contact.mail}
         />
       </Box>
+      <Footer
+        sx={{
+          position: "absolute",
+          bottom: 0
+        }}
+      />
     </Box>
   )
 }

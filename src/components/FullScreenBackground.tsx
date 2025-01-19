@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import backgroundImg from "./pexels-marc-schulte-656598-2952834.jpg"
 
 const StyledBackgroundImage = styled.div`
   background-size: cover;
@@ -13,13 +12,13 @@ const StyledBackgroundImage = styled.div`
 `
 
 type FullScreenBackgroundProps = {
-  backgroundImage?: string
+  backgroundImage: string
   style?: React.CSSProperties
   children: React.ReactNode
 }
 
 export const FullScreenBackground = ({
-  backgroundImage = backgroundImg,
+  backgroundImage,
   style,
   children
 }: FullScreenBackgroundProps) => {
