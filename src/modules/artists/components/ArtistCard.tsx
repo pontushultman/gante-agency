@@ -27,20 +27,17 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
     : null
 
   return (
-    <GuiSectionImage
-      imageUrl={imageUrl}
-      item={artist}
-      onClick={handleClick}
-      renderItem={(artist) => {
-        return (
-          <Box paddingBottom={"35px"}>
+    <Box>
+      <GuiSectionImage
+        imageUrl={imageUrl}
+        item={artist}
+        onClick={handleClick}
+        renderItem={(artist) => {
+          return (
             <Box
-              display="flex"
-              flexDirection="column"
-              rowGap={3}
               sx={{
                 position: "absolute",
-                bottom: 0,
+                bottom: 16,
                 left: 16
               }}
             >
@@ -48,7 +45,8 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
                 sx={{
                   display: "flex",
                   gap: 1,
-                  flexWrap: "wrap"
+                  flexWrap: "wrap",
+                  flexDirection: "row"
                 }}
               >
                 {artist.musicFormat?.map((label) => (
@@ -65,12 +63,14 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
                   />
                 ))}
               </Box>
-              <CardTypography>{artist.name}</CardTypography>
             </Box>
-          </Box>
-        )
-      }}
-    />
+          )
+        }}
+      />
+      <Box paddingLeft={2}>
+        <CardTypography>{artist.name}</CardTypography>
+      </Box>
+    </Box>
   )
 }
 
