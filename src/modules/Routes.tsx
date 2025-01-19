@@ -18,12 +18,14 @@ export type UnionPath =
 export type RouteConfig = {
   path: string
   element: ReactNode
+  home?: boolean
 }
 
 export const routes: RouteConfig[] = [
   {
     path: homePath,
-    element: <HomeRoute />
+    element: <HomeRoute />,
+    home: true
   },
   {
     path: artistsPath,

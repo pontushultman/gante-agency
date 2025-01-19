@@ -3,7 +3,7 @@ import { colors } from "../../../components/colors"
 import { Connect } from "../../../components/connect/Connect"
 import { SubTitle } from "../../../components/typography/SubTitle"
 import { siteInfo } from "../../../const"
-import { Footer } from "../../footer/Footer"
+import { FooterText } from "../../footer/Footer"
 
 const glitchAnim = keyframes`
   0% {
@@ -81,7 +81,7 @@ export const HomeTitle = () => {
           mailUrl={siteInfo.contact.mail}
         />
       </Box>
-      <Footer
+      <FooterText
         sx={{
           position: "absolute",
           bottom: 0

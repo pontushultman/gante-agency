@@ -1,1 +1,1 @@
-export const routePrefix = "gante-agency/"
+export const routePrefix = "/"

@@ -8,12 +8,11 @@ import { DetailPageImageSlideShow } from "../../../components/detail-page/Detail
 import { DetailPageTitle } from "../../../components/detail-page/DetailPageTitle"
 import { DetailPageWrapper } from "../../../components/detail-page/DetailPageWrapper"
 import { FullScreenBackground } from "../../../components/FullScreenBackground"
+import { siteInfo } from "../../../const"
 import { urlFor } from "../../../sanity/image"
 import { ArtistModel } from "../../../sanity/sanityClient"
 import { useArtistByIdQuery } from "../../../sanity/useClient"
 import { artistsPath } from "../ArtistsRoute"
-import { siteInfo } from "../../../const"
-import { colors } from "../../../components/colors"
 
 export const artistDetailPath = `${routePrefix}artists/:id`
 
