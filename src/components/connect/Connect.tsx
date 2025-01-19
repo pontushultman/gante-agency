@@ -2,13 +2,12 @@ import {
   Facebook,
   Instagram,
   Mail,
-  Map,
   PinDrop,
   YouTube
 } from "@mui/icons-material"
 import { Grid } from "@mui/material"
-import { GuiIconButton } from "../button/GuiIconButton"
 import Spotify from "../assets/Spotify"
+import { GuiIconButton } from "../button/GuiIconButton"
 
 export type ConnectProps = {
   facebookUrl?: string
