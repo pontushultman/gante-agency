@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import backgroundImg from "./homebg.jpeg"
+import backgroundImg from "./gante-home.jpeg"
 
 const StyledBackgroundImage = styled.div`
   background-size: cover;

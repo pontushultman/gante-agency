@@ -75,7 +75,7 @@ export const HomeTitle = () => {
           textShadow: "10px 10px 12px rgba(0, 0, 0, 0.5)"
         }}
       >
-        Gante Agency
+        Ganté Agency
       </Typography>
       <Box pt={1}>
         <Connect
