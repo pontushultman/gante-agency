@@ -37,7 +37,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
             <Box
               sx={{
                 position: "absolute",
-                bottom: 16,
+                bottom: 20,
                 left: 16
               }}
             >
