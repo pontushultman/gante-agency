@@ -2,9 +2,8 @@ import { useQuery } from "@tanstack/react-query"
 import { sanityDb } from "./sanityClient"
 
 const artistsQueryKey = ["artists"]
-
 const eventsQueryKey = ["events"]
-
+const eventPackagesQueryKey = ["eventPackages"]
 const managementQueryKey = ["management"]
 
 export const useEventsQuery = () => {
@@ -12,6 +11,15 @@ export const useEventsQuery = () => {
     queryKey: eventsQueryKey,
     queryFn: async () => {
       return await sanityDb.events.ToList()
+    }
+  })
+}
+
+export const useEventPackagesQuery = () => {
+  return useQuery({
+    queryKey: eventPackagesQueryKey,
+    queryFn: async () => {
+      return await sanityDb.eventPackages.ToList()
     }
   })
 }

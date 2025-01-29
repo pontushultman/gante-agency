@@ -14,6 +14,7 @@ export const siteInfo = {
         artists: "Artister",
         events: "Evenemang",
         contact: "Kontakt",
+        eventPackages: "Helhetskoncept",
     },
     artists: {
         title: "DJS & ARTISTER",
@@ -34,5 +35,10 @@ export const siteInfo = {
         subtitle: "Evenemang",
         description: "",
         eventCardButtonText: "Till event",
+    },
+    eventsPackages: {
+        title: "Ganté Agency",
+        subtitle: "Helhetskoncept",
+        description: "",
     }
 }

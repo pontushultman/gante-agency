@@ -4,6 +4,7 @@ import { siteInfo } from "../../const"
 import { useNavigationContext } from "../../setup/NavigationProvider"
 import { artistsPath } from "../artists/ArtistsRoute"
 import { eventsPath } from "../events/EventsRoute"
+import { eventPackagesPath } from "../event-packages/EventPackagesRoute"
 
 type MenuPageProps = {
   onHomeClick: () => void
@@ -32,6 +33,10 @@ export const MenuPage = ({ onHomeClick }: MenuPageProps) => {
       <MenuItem
         label={siteInfo.navigation.events}
         onClick={() => navigateTo(eventsPath)}
+      />
+      <MenuItem
+        label={siteInfo.navigation.eventPackages}
+        onClick={() => navigateTo(eventPackagesPath)}
       />
     </Box>
   )

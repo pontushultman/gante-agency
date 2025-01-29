@@ -5,7 +5,8 @@ import {
   ArtistType,
   MusicFormat,
   Event,
-  Management
+  Management,
+  EventPackage
 } from "./generated-schema-types"
 
 const client = createClient({
@@ -29,6 +30,7 @@ class SanityDb {
   artistTypes = new EntitySet<ArtistType>("artistType")
   events = new EntitySet<EventsModel>("event")
   management = new EntitySet<Management>("management")
+  eventPackages = new EntitySet<EventPackage>("eventPackage")
 }
 
 export const sanityDb = new SanityDb()

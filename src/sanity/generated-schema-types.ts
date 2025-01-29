@@ -286,4 +286,52 @@ export interface Management extends SanityDocument {
   mail?: string;
 }
 
-export type Documents = Artists | MusicFormat | ArtistType | Event | Management;
+/**
+ * Event package
+ *
+ *
+ */
+export interface EventPackage extends SanityDocument {
+  _type: "eventPackage";
+
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string;
+
+  /**
+   * Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+
+  /**
+   * Information — `text`
+   *
+   *
+   */
+  information?: string;
+
+  /**
+   * Price — `string`
+   *
+   *
+   */
+  price?: string;
+}
+
+export type Documents =
+  | Artists
+  | MusicFormat
+  | ArtistType
+  | Event
+  | Management
+  | EventPackage;

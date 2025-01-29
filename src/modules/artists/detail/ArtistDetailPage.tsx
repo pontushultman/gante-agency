@@ -84,9 +84,13 @@ export const ArtistDetailPage = () => {
 
 type ParagraphsProps = {
   paragraphs?: string[]
+  lineHeight?: string
 }
 
-export const Paragraphs = ({ paragraphs }: ParagraphsProps) => {
+export const Paragraphs = ({
+  paragraphs,
+  lineHeight = "1.5em"
+}: ParagraphsProps) => {
   const isSmallDevice = useIsSmallDevice()
 
   if (!paragraphs) return null
@@ -97,8 +101,9 @@ export const Paragraphs = ({ paragraphs }: ParagraphsProps) => {
         <Typography
           color="#bbbbbb"
           fontSize={!isSmallDevice ? "1.25rem" : "0.85rem"}
-          lineHeight="1.5em"
+          lineHeight={lineHeight}
           textTransform="none"
+          textOverflow="ellipsis"
           key={index}
           sx={{
             color: "#fff",
