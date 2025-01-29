@@ -28,8 +28,8 @@ export const EventPackagesSection = () => {
           Våra helhetskoncept
         </Typography>
         <GuiSection<EventPackage>
-          lg={12}
-          md={12}
+          lg={6}
+          md={6}
           xs={12}
           sm={12}
           items={data || []}
@@ -46,18 +46,18 @@ type EventPackageCardProps = {
 
 const EventPackageCard = ({ eventPackage }: EventPackageCardProps) => {
   const imageUrl = eventPackage.image
-    ? urlFor(eventPackage.image).width(1000).height(1200).url()
+    ? urlFor(eventPackage.image).width(1500).height(1000).url()
     : null
 
   const paragraphs = eventPackage.information?.split("\n")
 
   return (
-    <Box display="flex" flexDirection="column" width="100%" maxWidth={600}>
+    <Box display="flex" flexDirection="column" width="100%">
       <GuiSectionImage
         imageUrl={imageUrl}
         item={eventPackage}
         sx={{
-          maxWidth: 600
+          maxHeight: 550
         }}
         renderItem={(eventPackage) => {
           return (
