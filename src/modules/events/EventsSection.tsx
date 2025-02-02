@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material"
+import { useMemo } from "react"
 import { GuiSection } from "../../components/section/GuiSection"
+import { useIsSmallDevice } from "../../hooks/useIsSmallDevice"
 import { EventsModel } from "../../sanity/sanityClient"
 import { useEventsQuery } from "../../sanity/useClient"
 import { EventCard } from "./EventCard"
-import { useMemo } from "react"
-import { useIsSmallDevice } from "../../hooks/useIsSmallDevice"
 
 export const EventsSection = () => {
   const { data, isLoading } = useEventsQuery()
@@ -20,24 +20,13 @@ export const EventsSection = () => {
 
   if (isLoading) return null
 
-  if (data?.length === 0)
-    return (
-      <Box
-        width="100%"
-        height="100%"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography variant={variant}>Currently there are no events</Typography>
-      </Box>
-    )
-
   return (
     <Box minHeight="100vh">
       <Box>
-        <Typography pl={4} textTransform="none" variant={variant}>
-          Kommande events
+        <Typography px={2} textTransform="none" variant={variant}>
+          {upcomingEvents && upcomingEvents.length > 0
+            ? "Kommande events"
+            : "Just nu finns det inga kommande events"}
         </Typography>
         <GuiSection<EventsModel>
           items={upcomingEvents || []}
