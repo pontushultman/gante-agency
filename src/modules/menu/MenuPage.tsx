@@ -5,6 +5,7 @@ import { useNavigationContext } from "../../setup/NavigationProvider"
 import { artistsPath } from "../artists/ArtistsRoute"
 import { eventsPath } from "../events/EventsRoute"
 import { eventPackagesPath } from "../event-packages/EventPackagesRoute"
+import { useIsSmallDevice } from "../../hooks/useIsSmallDevice"
 
 type MenuPageProps = {
   onHomeClick: () => void
@@ -48,9 +49,11 @@ type MenuItemProps = {
 }
 
 export const MenuItem = ({ label, onClick }: MenuItemProps) => {
+  const isSmallDevice = useIsSmallDevice()
+
   return (
     <Typography
-      variant="h2"
+      variant={isSmallDevice ? "h4" : "h2"}
       fontWeight="bold"
       onClick={onClick}
       sx={{
