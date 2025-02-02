@@ -26,7 +26,7 @@ export const EventsSection = () => {
         <Typography px={2} textTransform="none" variant={variant}>
           {upcomingEvents && upcomingEvents.length > 0
             ? "Kommande events"
-            : "Just nu finns det inga kommande events"}
+            : "Nya events kommer inom kort."}
         </Typography>
         <GuiSection<EventsModel>
           items={upcomingEvents || []}
